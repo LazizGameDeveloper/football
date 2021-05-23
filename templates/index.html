@@ -1,0 +1,970 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+{% include "blocks/head.html" %}
+
+<body class="isHome gallery-W">
+<!-- preloader -->
+<div class="pl">
+    <div class="round1 anti"></div>
+    <div class="pl_r"></div>
+    <div class="pl_l"></div>
+</div>
+
+<div class="wrapper">
+
+    <header class="main-head clearfix">
+        <div class="container">
+
+            <div class="header-top">
+                <div class="row">
+
+                    <div class="mini-menu hidden-lg hidden-md">
+                        <a href="#" class="toggle-mnu"><span></span></a>
+                    </div> <!-- End Mini-menu -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <a href="{% url "home" %}" class="logo"><img src="/media/img/logo.png" alt=""></a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 hidden-sm hidden-xs">
+                        <h1>Join our club</h1>
+                    </div>
+
+                    <div class="col-lg-5 col-md-4 hidden-sm hidden-xs">
+                        <div class="row">
+                            <div class="col-lg-6 hidden-md hidden-sm hidden-xs">
+                                <p>We are always welcoming of new members</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="icon-wrap">
+
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <div class="circle-border">
+                                            <i class="icon-facebook"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <div class="circle-border">
+                                            <i class="icon-twitter-logo-silhouette"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <div class="circle-border">
+                                            <i class="icon-instagram-symbol"></i>
+                                        </div>
+                                    </a>
+
+                                </div> <!-- End Icon-wrap -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div> <!-- End Row -->
+            </div> <!-- End Header-top -->
+
+            <!-- Start navigation -->
+            <nav id="menu" class="nav-line hidden-sm hidden-xs default">
+                <ul class="menu">
+                    <li class="active"><a href="{% url "home" %}">Home</a></li>
+                    <li><a href="{% url "about" %}">about</a></li>
+                    <li><a href="{% url "teams-stats" %}">Teams and stats</a></li>
+                    <li><a href="{% url "gallery" %}">Photo/Video</a></li>
+                    <li><a href="{% url "blog-posts" %}">News/Blog</a></li>
+                    <li><a href="{% url "schedule" %}">SCHEDULE</a></li>
+                    <li><a href="{% url "partners" %}">PARTNERS</a></li>
+                    <li><a href="{% url "contacts" %}">Contacts</a></li>
+                </ul>
+            </nav> <!-- End Nav -->
+
+            <nav class="nav-line-hidden hidden-lg hidden-md ">
+                <ul class="menu">
+                    <li class="active"><a href="{% url "home" %}">Home</a></li>
+                    <li><a href="{% url "about" %}">about</a></li>
+                    <li><a href="{% url "teams-stats" %}">Teams and stats</a></li>
+                    <li><a href="{% url "gallery" %}">Photo/Video</a></li>
+                    <li><a href="{% url "blog-posts" %}">News/Blog</a></li>
+                    <li><a href="{% url "schedule" %}">SCHEDULE</a></li>
+                    <li><a href="{% url "partners" %}">PARTNERS</a></li>
+                    <li><a href="{% url "contacts" %}">Contacts</a></li>
+                </ul>
+            </nav> <!-- End Nav -->
+
+        </div> <!-- End Container -->
+    </header> <!-- End Header -->
+
+    <!-- Carousel -->
+    <section id="mainCarouselWrapper">
+        <div id="mainCarousel" class="t-white carousel-eq owl-carousel owl-theme">
+
+            <div class="carousel-item">
+
+                <div class="img-holder1"></div>
+
+                <div class="carousel-content center">
+                    <div class="text-wrap text-ani1">
+                        <div class="text">
+                            <h2>Look Up, Get Up <br> But Never Give Up</h2>
+                            <p>Demand respect or expect defeat</p>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="{% url "about" %}" class="btn btn-link-o">
+                            <span>read more</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>  <!-- End carousel-item -->
+
+            <div class="carousel-item">
+
+                <div class="img-holder2"></div>
+
+                <div class="carousel-content center">
+                    <div class="text-wrap text-ani2">
+                        <div class="text">
+                            <h2>Hustle and Heart <br> Set Us Apart</h2>
+                            <p>Championships are made when the stands are empty</p>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="{% url "about" %}" class="btn btn-link-o">
+                            <span>read more</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>  <!-- End carousel-item -->
+
+            <div class="carousel-item">
+
+                <div class="img-holder3"></div>
+
+                <div class="carousel-content center">
+                    <div class="text-wrap text-ani3">
+                        <div class="text">
+                            <h2>Practice Winning <br> Every Day</h2>
+                            <p>A team above all. Above all a team</p>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="{% url "about" %}" class="btn btn-link-o">
+                            <span>read more</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>  <!-- End carousel-item -->
+
+        </div> <!-- End mainCarousel -->
+    </section> <!-- End CarouselWrapper -->
+
+    <!-- Start Page-Content -->
+    <section id="page-content">
+
+        <!-- Start Club Block -->
+        <div class="t-black">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-12">
+                        <div class="infoClub-wrap">
+                            <h2><span class="orange-text">About </span>Our Club</h2>
+                            <h4>Demand respect or expect defeat</h4>
+                            <div class="inner-text">
+                                <p>Founded in 1986, the American Football Club are members of the American Football and
+                                    Cheerleading Federation. In addition, the American Football Club are members of both
+                                    the National Federation of Sports and the USA Sports Association.</p>
+                                <p>As American Football Club we continually aspire to make our sports program attractive
+                                    to all types of players, both elite and novice, and both large and small. During
+                                    recent years, we have made a concerted effort to increase the access of our
+                                    programs, especially in our youth program where we believe we are uniquely equipped
+                                    to offer athletic activities and organizational support that alternative sports
+                                    cannot provide. </p>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="{% url "about" %}" class="btn btn-link-w"><span>club history</span></a>
+                            </div>
+                        </div> <!-- End infoClub-wrap -->
+                    </div><!-- End col-md-6 -->
+
+                    <div class="col-lg-6 col-md-12">
+
+                    </div> <!-- End col-md-6 -->
+
+                </div> <!-- End Row -->
+            </div> <!-- End Container -->
+            <div class="wrap-block-player hidden-md hidden-sm hidden-xs">
+                <img src="../media/img/player.png" alt="player">
+            </div>
+        </div> <!-- End Club Block -->
+
+        <!-- Start Teams Block -->
+        <div class="block-Teams t-white clearfix">
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="t-wrap">
+                            <h2><span class="orange-text">Our </span>Teams</h2>
+                            <h4>Some teams play football, we live it!</h4>
+                        </div>
+                    </div>
+
+                    <div class="img-block-teams clearfix">
+                        <div class="col-sm-4">
+
+                            <a href="teams-stats.html">
+                                <div class="b-wrap1 b-hover-team clearfix">
+
+                                    <div class="teams-content">
+                                        <div class="b-inner-content-wrap clearfix">
+                                            <div class="oblique-block">
+                                                <span><i class="icon-signs"></i></span>
+                                            </div>
+                                            <div class="b-inner-text">
+                                                <h3>Premiers</h3>
+                                                <p>We have a senior mens club entered into in the <br> Senior
+                                                    competition of the competition. </p>
+                                            </div>
+                                        </div> <!-- End b-inner-content-wrap -->
+                                    </div> <!-- End teams-content -->
+
+                                </div> <!-- End b-wrap -->
+                            </a>
+
+                        </div> <!-- End col-sm-4 -->
+
+                        <div class="col-sm-4">
+                            <a href="teams-stats.html">
+                                <div class="b-wrap2 b-hover-team clearfix">
+
+                                    <div class="teams-content">
+                                        <div class="b-inner-content-wrap clearfix">
+                                            <div class="oblique-block">
+                                                <span><i class="icon-sports-4"></i></span>
+                                            </div>
+                                            <div class="b-inner-text">
+                                                <h3>Colts</h3>
+                                                <p>We are looking for players from all sporting <br> backgrounds and
+                                                    sizes! </p>
+                                            </div>
+                                        </div> <!-- End b-inner-content-wrap -->
+                                    </div> <!-- End teams-content -->
+
+                                </div> <!-- End b-wrap -->
+                            </a>
+                        </div> <!-- End col-sm-4 -->
+
+                        <div class="col-sm-4 clearfix">
+                            <a href="teams-stats.html">
+                                <div class="b-wrap3 b-hover-team clearfix">
+
+                                    <div class="teams-content">
+                                        <div class="b-inner-content-wrap clearfix">
+                                            <div class="oblique-block">
+                                                <span><i class="icon-fashion"></i></span>
+                                            </div>
+                                            <div class="b-inner-text">
+                                                <h3>Juniors</h3>
+                                                <p>If you are interested in trying out this <br> exciting sport, please
+                                                    get in touch with us. </p>
+                                            </div>
+                                        </div> <!-- End b-inner-content-wrap -->
+                                    </div> <!-- End teams-content -->
+
+                                </div> <!-- End b-wrap -->
+                            </a>
+                        </div> <!-- End col-sm-4 -->
+
+                    </div> <!-- End img-block-teams -->
+
+                </div><!-- End Row -->
+            </div><!-- End Container -->
+
+        </div> <!-- End Teams Block -->
+
+        <!-- Sratr Schedule Block -->
+        <div class="block-Schedule clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="video-block">
+                            <h2>Video</h2>
+                            <div class="wrap-video">
+                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gl1n79s3vRw"
+                                        allowfullscreen></iframe>
+                            </div>
+                            <p>Check out The American Football Club episodes</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <h2>Schedule</h2>
+                        <div class="link-wrap clearfix">
+                            <a href="#" class="one-l btn btn-link-g on"><span>2017 Premiers</span></a>
+                            <a href="#" class="two-l btn btn-link-g"><span>2017 Colts</span></a>
+                            <a href="#" class="thire-l btn btn-link-g"><span>2017 Juniors</span></a>
+                        </div>
+                        <div class="content-Schedule">
+                            <div class="wrap-inner-s-1">
+                                <table class="table-Schedule">
+                                    <tr class="orange-text pad-table">
+                                        <th>Date</th>
+                                        <th>Venue</th>
+                                        <th>Opponent</th>
+                                        <th class="hidden-xs">Competition</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>30 Apr, 16:00</th>
+                                        <th class="t-center">A</th>
+                                        <th>Trolling Crabtree</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr>
+                                        <th>07 May, 14:00</th>
+                                        <th class="t-center">H</th>
+                                        <th>Pitch a Trent</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>16 May, 19:00</th>
+                                        <th class="t-center">A</th>
+                                        <th>You Kaepernick Future</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr>
+                                        <th>07 May, 14:00</th>
+                                        <th class="t-center">H</th>
+                                        <th>Pitch a Trent</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>30 Apr, 16:00</th>
+                                        <th class="t-center">A</th>
+                                        <th>Trolling Crabtree</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="wrap-inner-s-2">
+                                <table class="table-Schedule">
+                                    <tr class="orange-text pad-table">
+                                        <th>Date</th>
+                                        <th>Venue</th>
+                                        <th>Opponent</th>
+                                        <th class="hidden-xs">Competition</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>07 May, 14:00</th>
+                                        <th class="t-center">H</th>
+                                        <th>Pitch a Trent</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr>
+                                        <th>07 May, 14:00</th>
+                                        <th class="t-center">H</th>
+                                        <th>Pitch a Trent</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>16 May, 19:00</th>
+                                        <th class="t-center">A</th>
+                                        <th>You Kaepernick Future</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr>
+                                        <th>07 May, 14:00</th>
+                                        <th class="t-center">H</th>
+                                        <th>Pitch a Trent</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>30 Apr, 16:00</th>
+                                        <th class="t-center">A</th>
+                                        <th>Trolling Crabtree</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="wrap-inner-s-3">
+                                <table class="table-Schedule">
+                                    <tr class="orange-text pad-table">
+                                        <th>Date</th>
+                                        <th>Venue</th>
+                                        <th>Opponent</th>
+                                        <th class="hidden-xs">Competition</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>30 Apr, 16:00</th>
+                                        <th class="t-center">A</th>
+                                        <th>Trolling Crabtree</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr>
+                                        <th>07 May, 14:00</th>
+                                        <th class="t-center">H</th>
+                                        <th>Pitch a Trent</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>16 May, 19:00</th>
+                                        <th class="t-center">A</th>
+                                        <th>You Kaepernick Future</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr>
+                                        <th>07 May, 14:00</th>
+                                        <th class="t-center">H</th>
+                                        <th>Pitch a Trent</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                    <tr class="p-gray">
+                                        <th>30 Apr, 16:00</th>
+                                        <th class="t-center">A</th>
+                                        <th>Trolling Crabtree</th>
+                                        <th class="t-center hidden-xs">2017</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Row -->
+            </div>
+
+        </div> <!-- End Schedule Block -->
+
+        <!-- Start Coaches Block -->
+        <div class="block-Coaches clearfix t-white t-center">
+            <div class="b-wrap-Coaches">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="text-wrap">
+                                <h2><span class="orange-text">Our </span>Coaches</h2>
+                                <p>Practice doesn’t make perfect, perfect practice makes perfect.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="carousel-wrap-coaches owl-carousel owl-theme">
+
+                                <div class="carousel-item-coaches coaches-animated1">
+
+                                    <div class="car-img-wrap">
+                                        <img src="../media/img/coaches/coaches1.png" alt="icon-coaches">
+                                    </div>
+
+                                    <div class="car-text-wrap">
+                                        <h4>Sammy McDonnell</h4>
+                                        <h5 class="orange-text">Coach & Offensive Coordinator</h5>
+                                        <p>The 2017 season will be Sammy' first season with us. He has been coaching for
+                                            over 20 years.</p>
+                                    </div>
+
+                                    <div class="car-btn-wrap">
+                                        <a href="teams-stats.html" class="btn btn-link-o">
+                                            <span>know more</span>
+                                        </a>
+                                    </div>
+
+                                </div> <!--End carousel-item-coaches -->
+
+                                <div class="carousel-item-coaches coaches-animated2">
+
+                                    <div class="car-img-wrap">
+                                        <img src="../media/img/coaches/coaches2.png" alt="icon-coaches">
+                                    </div>
+
+                                    <div class="car-text-wrap">
+                                        <h4>James Frazier</h4>
+                                        <h5 class="orange-text">Defensive Coordinator</h5>
+                                        <p>James has been with us for a number of years, but this season sees his return
+                                            to kitted coaching.</p>
+                                    </div>
+
+                                    <div class="car-btn-wrap">
+                                        <a href="teams-stats.html" class="btn btn-link-o">
+                                            <span>know more</span>
+                                        </a>
+                                    </div>
+
+                                </div> <!--End carousel-item-coaches -->
+
+                                <div class="carousel-item-coaches coaches-animated3">
+
+                                    <div class="car-img-wrap">
+                                        <img src="../media/img/coaches/coaches3.png" alt="icon-coaches">
+                                    </div>
+
+                                    <div class="car-text-wrap">
+                                        <h4>Elmer Ferguson</h4>
+                                        <h5 class="orange-text">Special Teams Coordinator</h5>
+                                        <p>Having previously played a variety of positions, Coach Elmer a niche in
+                                            Special Teams. Lorem dolor sit amet.</p>
+                                    </div>
+
+                                    <div class="car-btn-wrap">
+                                        <a href="teams-stats.html" class="btn btn-link-o">
+                                            <span>know more</span>
+                                        </a>
+                                    </div>
+
+                                </div> <!--End carousel-item-coaches -->
+
+                            </div> <!-- End carousel-wrap-coaches -->
+                        </div> <!-- End col-md-12 -->
+
+                    </div>  <!-- End Row -->
+                </div> <!-- End Container -->
+            </div> <!-- End wrap-Coaches -->
+        </div> <!-- End Coaches Block -->
+
+        <!-- Start Recent News Block -->
+        <div class="block block-News clearfix">
+            <div class="b-wrap-News">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="text-wrap t-center">
+                                <h2><span class="orange-text">Recent </span>News</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 padding-null">
+                            <div class="carousel-wrap-news owl-carousel owl-theme">
+
+                                <div class="carousel-item-news news-animated1">
+
+                                    <a href="blog-post.html" class="link-news">
+                                        <div class="car-img-wrap">
+                                            <img src="../media/img/news/news1.jpg" alt="icon-news">
+                                        </div>
+
+                                        <div class="car-date-wrap">
+                                            <div class="car-date-content">
+                                                <p>Jan 6 <br> 2017</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="car-text-wrap">
+                                            <p>
+                                                Compensatory Pick Projection For The Dolphins
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div> <!--End carousel-item-coaches -->
+
+                                <div class="carousel-item-news news-animated2">
+
+                                    <a href="blog-post.html" class="link-news">
+                                        <div class="car-img-wrap">
+                                            <img src="../media/img/news/news2.jpg" alt="icon-news">
+                                        </div>
+
+                                        <div class="car-date-wrap">
+                                            <div class="car-date-content">
+                                                <p>Feb 17 <br> 2017</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="car-text-wrap">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, aut.
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div> <!--End carousel-item-coaches -->
+
+                                <div class="carousel-item-news news-animated3">
+
+                                    <a href="blog-post.html" class="link-news">
+                                        <div class="car-img-wrap">
+                                            <img src="../media/img/news/news3.jpg" alt="icon-news">
+                                        </div>
+
+                                        <div class="car-date-wrap">
+                                            <div class="car-date-content">
+                                                <p>Mar 9 <br> 2017</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="car-text-wrap">
+                                            <p>
+                                                Libero maxime eos iusto est perferendis dolorem, debitis, possimus saepe
+                                                natus.
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div> <!--End carousel-item-coaches -->
+
+                            </div> <!-- End carousel-wrap-News -->
+                        </div> <!-- End col-md-12 -->
+
+                    </div>  <!-- End Row -->
+                </div> <!-- End Container -->
+            </div> <!-- End wrap-News -->
+        </div> <!-- End Recent News Block -->
+
+        <!-- Start Club Gallery Block -->
+        <div class="block-Club-Gallery clearfix t-black t-center">
+            <div class="b-wrap-club-gallery">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="text-wrap">
+                                <h2><span class="orange-text">Our Club </span>Gallery</h2>
+                                <p>Victory begins in the Heart</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="filters-by-category">
+                                <ul class="option-set" data-option-key="filter">
+                                    <li><a class="btn btn-link-g selected" href="#filter" data-option-value="*"><span>All Photos</span></a>
+                                    </li>
+                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category1"><span>2014 Gallery</span></a>
+                                    </li>
+                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category2"><span>2015 Gallery</span></a>
+                                    </li>
+                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category3"><span>2016 Gallery</span></a>
+                                    </li>
+                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category4"><span>2017 Gallery</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 gallery-m">
+                            <div id="gallery" class="gallery gallery-isotope clearfix">
+
+                                <div class="gallery__item category1">
+                                    <div class="gallery__item__img">
+                                        <img src="../media/img/clubGallery/clubGallery1.jpg" alt="gc">
+                                        <a class="hover-link-g mfp-gallery"
+                                           href="../media/img/clubGallery/clubGallery1.jpg">
+                                            <div class="inside">
+                                                <i class="icon-cross"></i>
+                                                <p>We have a senior mens club entered into in the Senior competition of
+                                                    the competition.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="gallery__item category2">
+                                    <div class="gallery__item__img">
+                                        <img src="../media/img/clubGallery/clubGallery2.jpg" alt="gc">
+                                        <a class="hover-link-g mfp-gallery"
+                                           href="../media/img/clubGallery/clubGallery2.jpg">
+                                            <div class="inside">
+                                                <i class="icon-cross"></i>
+                                                <p>We have a senior mens club entered into in the Senior competition of
+                                                    the competition.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="gallery__item category1">
+                                    <div class="gallery__item__img">
+                                        <img src="../media/img/clubGallery/clubGallery3.jpg" alt="gc">
+                                        <a class="hover-link-g mfp-gallery"
+                                           href="../media/img/clubGallery/clubGallery3.jpg">
+                                            <div class="inside">
+                                                <i class="icon-cross"></i>
+                                                <p>We have a senior mens club entered into in the Senior competition of
+                                                    the competition.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="gallery__item category3">
+                                    <div class="gallery__item__img">
+                                        <img src="../media/img/clubGallery/clubGallery4.jpg" alt="gc">
+                                        <a class="hover-link-g mfp-gallery"
+                                           href="../media/img/clubGallery/clubGallery4.jpg">
+                                            <div class="inside">
+                                                <i class="icon-cross"></i>
+                                                <p>We have a senior mens club entered into in the Senior competition of
+                                                    the competition.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="gallery__item category1">
+                                    <div class="gallery__item__img">
+                                        <img src="../media/img/clubGallery/clubGallery5.jpg" alt="gc">
+                                        <a class="hover-link-g mfp-gallery"
+                                           href="../media/img/clubGallery/clubGallery5.jpg">
+                                            <div class="inside">
+                                                <i class="icon-cross"></i>
+                                                <p>We have a senior mens club entered into in the Senior competition of
+                                                    the competition.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="gallery__item category4">
+                                    <div class="gallery__item__img">
+                                        <img src="../media/img/clubGallery/clubGallery6.jpg" alt="gc">
+                                        <a class="hover-link-g mfp-gallery"
+                                           href="../media/img/clubGallery/clubGallery6.jpg">
+                                            <div class="inside">
+                                                <i class="icon-cross"></i>
+                                                <p>We have a senior mens club entered into in the Senior competition of
+                                                    the competition.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div> <!-- End gallery-isotope -->
+                        </div> <!-- End block gallery-m -->
+
+                        <div class="col-md-12">
+                            <div class="btn-wrap-gallery">
+                                <a href="gallery.html" class="btn btn-link-w">
+                                    <span>view all gallery</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>  <!-- End Row -->
+                </div> <!-- End Container -->
+            </div> <!-- End wrap-Club-Gallery -->
+        </div> <!-- End Club-Gallery Block -->
+
+        <!-- Start Partners Block -->
+        <div class="block block-Partners t-center clearfix">
+            <div class="b-wrap-partners">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="text-wrap">
+                                <h2><span class="orange-text">Meet </span>Our Partners</h2>
+                                <p>Our best friends ever</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="carousel-wrap-partners owl-carousel owl-theme">
+
+                                <div class="carousel-item-partners">
+                                    <a href="partners.html" class="link-partners" target="_blank">
+                                        <img src="../media/img/partners/partners1.png" alt="partners">
+                                    </a>
+                                </div> <!--End carousel-item-partners -->
+
+                                <div class="carousel-item-partners">
+                                    <a href="partners.html" class="link-partners" target="_blank">
+                                        <img class="min-img1" src="../media/img/partners/partners5.png" alt="partners">
+                                    </a>
+                                </div> <!--End carousel-item-partners -->
+
+                                <div class="carousel-item-partners">
+                                    <a href="partners.html" class="link-partners" target="_blank">
+                                        <img src="../media/img/partners/partners3.png" alt="partners">
+                                    </a>
+                                </div> <!--End carousel-item-partners -->
+
+                                <div class="carousel-item-partners">
+                                    <a href="partners.html" class="link-partners" target="_blank">
+                                        <img class="min-img2" src="../media/img/partners/partners4.png" alt="partners">
+                                    </a>
+                                </div> <!--End carousel-item-partners -->
+
+                                <div class="carousel-item-partners">
+                                    <a href="partners.html" class="link-partners" target="_blank">
+                                        <img src="../media/img/partners/partners2.png" alt="partners">
+                                    </a>
+                                </div> <!--End carousel-item-partners -->
+
+                                <div class="carousel-item-partners">
+                                    <a href="partners.html" class="link-partners" target="_blank">
+                                        <img src="../media/img/partners/partners6.png" alt="partners">
+                                    </a>
+                                </div> <!--End carousel-item-partners -->
+
+                            </div> <!-- End carousel-wrap-partners -->
+                        </div> <!-- End col-md-12 -->
+
+                        <div class="col-md-12 padding-null">
+                            <div class="block-wrap-sponsor">
+                                <a href="contacts.html">WANT TO SPONSOR US?</a>
+                            </div>
+                        </div>
+
+                    </div>  <!-- End Row -->
+                </div> <!-- End Container -->
+            </div> <!-- End wrap-Partners -->
+        </div> <!-- End Partners Block -->
+
+        <!-- Start Subscribe Block -->
+        <div class="block-Subscribe t-white t-center clearfix">
+            <div class="b-wrap-subscribe">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-12 padding-null">
+                            <div class="bg-subscribe1">
+                                <div class="bg-dark1">
+
+                                    <div class="text-wrap">
+                                        <h2><span class="orange-text">Keep Up </span>With Our Teams</h2>
+                                        <p>The Newsletter is the best way to stay on top of what’s happening –
+                                            everything from schedules for high school football athlete training camps to
+                                            results of international tournaments. Sign up now.</p>
+                                    </div>
+
+                                    <div class="form-wrap">
+                                        <form action="mail.php" class="box-email-form">
+                                            <input type="text" name="email" placeholder="Enter your e-mail"
+                                                   class="form-control">
+                                            <button type="submit" id="submit" class="btn btn-link-o">
+                                                <span>Subscribe</span></button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div><!-- End col-md-12 -->
+
+                        <div class="col-md-12 padding-null">
+                            <div class="bg-subscribe2">
+                                <div class="bg-dark2">
+
+                                    <div class="container">
+                                        <div class="row">
+
+                                            <div class="col-lg-4 col-sm-12">
+                                                <div class="b-wrap-soc-network subscribe-animated1">
+
+                                                    <div class="icon-wrap">
+                                                        <a href="https://www.facebook.com/" target="_blank">
+                                                            <i class="icon-facebook"></i>
+                                                            <p>Facebook</p>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="content-wrap facebook-if">
+                                                        <!-- <iframe class="hidden-xs" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=370&height=260&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="370" height="260" style="border:none;overflow:hidden"></iframe> -->
+
+                                                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=300&height=260&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                                                                width="300" height="260"
+                                                                style="border:none;overflow:hidden"></iframe>
+                                                    </div>
+
+                                                </div>
+                                            </div> <!-- End col-md-4 -->
+
+                                            <div class="col-lg-4 col-sm-12">
+                                                <div class="b-wrap-soc-network subscribe-animated2">
+
+                                                    <div class="icon-wrap">
+                                                        <a href="https://twitter.com/" target="_blank">
+                                                            <i class="icon-twitter-logo-silhouette"></i>
+                                                            <p>Twitter</p>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="content-wrap">
+
+                                                        <a href="https://twitter.com/" target="_blank"
+                                                           class="clearfix bbc">
+                                                            <div class="bef">
+                                                                <div class="img-wrap">
+                                                                    <img src="../media/img/subscribe/bbc-img-icon.jpg"
+                                                                         alt="bbc">
+                                                                </div>
+                                                                <div class="content-text-wrap">
+                                                                    <h6>BBC Sport / @BBCSport 14 min</h6>
+                                                                    <p>Serena Williams is still on course to win a
+                                                                        record 23rd Grand Slam title.</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+
+                                                    <div class="content-wrap">
+
+                                                        <a href="https://twitter.com/" target="_blank"
+                                                           class="clearfix bbc">
+                                                            <div class="bef">
+                                                                <div class="img-wrap">
+                                                                    <img src="../media/img/subscribe/bbc-img-icon.jpg"
+                                                                         alt="bbc">
+                                                                </div>
+                                                                <div class="content-text-wrap">
+                                                                    <h6>BBC Sport / @BBCSport 14 min</h6>
+                                                                    <p>Manchester City have been given more time to
+                                                                        reply to a Football Association anti-doping
+                                                                        charge.</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                </div> <!-- End b-wrap-soc-network -->
+
+                                            </div> <!-- End col-md-4 -->
+
+                                            <div class="col-lg-4 col-sm-12">
+                                                <div class="b-wrap-soc-network subscribe-animated3">
+
+                                                    <div class="icon-wrap">
+                                                        <a href="https://www.instagram.com/" target="_blank">
+                                                            <i class="icon-instagram-symbol"></i>
+                                                            <p>Instagram</p>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="instafeed-wrap clearfix">
+                                                            <div class="instafeed clearfix" id="instafeed">
+
+                                                            </div>
+                                                        </div>
+                                                    </div> <!-- End Row-inner2 -->
+
+                                                </div><!-- End b-wrap-soc-network -->
+                                            </div><!-- End col-md-4 -->
+
+                                        </div> <!-- End Row-inner -->
+                                    </div> <!-- End Container-inner -->
+
+                                </div>
+                            </div>
+                        </div><!-- End col-md-12 -->
+
+                    </div>  <!-- End Row -->
+                </div> <!-- End Container -->
+            </div> <!-- End wrap-Subscribe -->
+        </div> <!-- End Subscribe Block -->
+
+    </section> <!-- End Page-Content -->
+
+    <!-- Start Page-Footer -->
+    {% include "blocks/footer.html" %}
+    <!-- End Page-Footer -->
+
+</div> <!-- End Wrapper -->
+
+<div class="hidden"></div>
+
+{% include "blocks/js.html" %}
+
+</body>
+</html>

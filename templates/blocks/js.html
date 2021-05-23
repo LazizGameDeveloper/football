@@ -1,0 +1,27 @@
+
+<!-- Load Scripts Start -->
+<script src="/static/js/libs.js"></script>
+<script src="/static/js/common.js"></script>
+<script src="/static/libs/instafeed/instafeed.min.js"></script>
+<script>
+    // Instagram Feed
+    var feed = new Instafeed({
+        get: 'user',
+        userId: '5448325247',
+        clientId: '30901797efa241ab816a94b5cd869fd2',
+        limit: 6,
+        sortBy: 'most-liked',
+        resolution: "standard_resolution",
+        accessToken: '5448325247.3090179.15e6598014134f2aa662b2fb6cd4ee9d',
+        template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+    });
+    feed.run();
+</script>
+<!-- Load Scripts End -->
+
+<!--[if lt IE 9]>
+<script src="/static/libs/html5shiv/es5-shim.min.js"></script>
+<script src="/static/libs/html5shiv/html5shiv.min.js"></script>
+<script src="/static/libs/html5shiv/html5shiv-printshiv.min.js"></script>
+<script src="/static/libs/respond/respond.min.js"></script>
+<![endif]-->

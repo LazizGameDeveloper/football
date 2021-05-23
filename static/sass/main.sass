@@ -1,0 +1,1850 @@
+@import "bourbon"
+@import "vars"
+
+//Load Libs SASS
+@import "app/libs/animate/animate.sass"
+@import "app/libs/owl-carousel/assets/owl.carousel.sass"
+@import "app/libs/Magnific-Popup/magnific-popup.sass"
+
+*::-webkit-input-placeholder
+	color: #000
+	opacity: 1
+
+*:-moz-placeholder
+	color: #000
+	opacity: 1
+
+*::-moz-placeholder
+	color: #000
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #000
+	opacity: 1
+
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+//Magnific-Popup Customize
+.mfp-ready .mfp-figure
+	opacity: 0
+.mfp-zoom-in
+	.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+		opacity: 0
+		transition: all 0.3s ease-out
+		transform: scale(0.95)
+	&.mfp-bg, .mfp-preloader
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-image-loaded .mfp-figure
+		opacity: 1
+		transform: scale(1)
+	&.mfp-ready
+		.mfp-iframe-holder .mfp-iframe-scaler
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg, .mfp-preloader
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+			transform: scale(0.95)
+			opacity: 0
+		&.mfp-bg, .mfp-preloader
+			opacity: 0
+
+.mfp-iframe-scaler
+	overflow: visible
+.mfp-zoom-out-cur
+	cursor: auto
+	.mfp-image-holder .mfp-close
+		cursor: pointer
+.mfp-preloader
+	width: 30px!important
+	height: 30px!important
+	background-color: $accent
+	opacity: 1
+	margin: 0 auto
+	animation: rotateplane 1.2s infinite ease-in-out
+@-webkit-keyframes rotateplane
+	0%
+		-webkit-transform: perspective(120px)
+	50%
+		-webkit-transform: perspective(120px) rotateY(180deg)
+	100%
+		-webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+@keyframes rotateplane
+	0%
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+	50%
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+	100%
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+
+
+//Custom Styles Here
+
+/* Page-content */
+// Info-Club
+.Pages
+	.infoCommittee-wrap 
+		margin-top: 122px
+		.inner-text
+			width: 100%
+.t-black
+	position: relative
+	.wrap-block-player
+		img
+			height: 753px
+			top: 70px
+			right: 0
+.infoClub-wrap
+	margin-top: 125px 
+	margin-left: -19px
+	margin-bottom: 140px
+	h2
+		line-height: 1.1
+		color: #21201f
+		letter-spacing: 1.05px
+	h4
+		margin-top: -5px
+		margin-left: 3px
+		letter-spacing: 1.1px
+		font-size: em(28px)
+		font-family: "RobotoCondensedLight",sans-serif
+	.inner-text
+		margin-top: 44px
+		margin-left: 3px
+		p 
+			line-height: 1.5
+		>	p:first-child
+			font-family: "KanitLightItalic",sans-serif
+			margin-bottom: 25px
+	.btn-wrap
+		margin-top: 40px
+		margin-left: 15px
+		display: inline-block
+		.btn
+			width: 200px
+			>	span
+				margin-top: 9px
+				margin-left: 45px
+.wrap-block-player
+	img
+		position: absolute
+		top: 0
+		right: 0
+.infoCommittee-wrap
+	position: relative
+	.player-wrap
+		.player-img
+			height: 807px
+			position: absolute
+			top: 0
+			right: 0
+			+ad(.3s)
+	h2
+		margin-top: 122px
+		margin-left: -17px
+		line-height: 1.1
+		letter-spacing: 1.6px
+	.inner-text
+		margin-top: 25px
+		margin-left: -18px
+		margin-bottom: 130px
+		width: 49%
+		.line-block
+			border-bottom: 3px solid #f3f3f3
+			&:last-child
+				border-bottom: none
+			p 
+				display: inline-block
+				margin: 15px 0 15px 5px
+				font-size: em(17px)
+				font-weight: 500
+				color: #21201f
+				letter-spacing: 0.4px
+				&:first-child
+					font-family: "KanitLightItalic",sans-serif
+					font-weight: 200
+					width: 51.5%
+					color: #000
+				&:last-child
+					width: 45%
+					font-family: "KanitRegular",sans-serif
+
+/* Block-Teams */
+.block-Teams
+	background-color: #2b2b2b
+	.col-sm-4
+		padding: 0
+	.t-wrap
+		text-align: center
+		line-height: 1
+		h2
+			margin-top: 46px
+		h4
+			margin: 10px 0 60px 0
+			font-family: "RobotoCondensedLight",sans-serif
+
+	.b-hover-team
+		&:hover
+			.oblique-block
+				background-color: #FFF
+				width: 175px
+				i 
+					color: $accent
+			h3
+				color: $accent
+	.teams-content
+		.b-inner-content-wrap
+			display: block
+			margin-top: 77%
+			margin-left: -40px
+		.oblique-block
+			display: block
+			float: left
+			height: 120px
+			width: 162px
+			background-color: $accent
+			transform: skew(-23deg)
+			border-radius: (15px)
+			+mt(.5s)
+			>	span
+				display: inline-block
+				transform: skew(23deg)
+				i 
+					position: relative
+					display: block
+					margin: 24px 0 0 59px	
+					font-size: 64px
+					+mt(.5s)
+		.b-inner-text	
+			display: block
+			float: left
+			margin-left: 35px
+			h3
+				font-weight: 100
+				line-height: 1.1
+				margin-top: 4px
+				margin-bottom: 10px
+				+mt(.5s)
+			p 
+				font-family: "KanitRegular",sans-serif
+				font-size: em(18px)
+				margin-top: 8px
+				margin-left: 1px
+				display: inline-block
+				line-height: 1.3
+
+.b-wrap1
+	background-image: url("../../media/img/Teams/Teams1.jpg")
+	background-size: cover
+	background-repeat: no-repeat
+	display: block
+	width: 100%
+	min-height: 660px
+	position: relative
+	z-index: 10
+.b-wrap2
+	background-image: url("../../media/img/Teams/Teams2.jpg")
+	background-size: cover
+	background-repeat: no-repeat
+	display: block
+	width: 100%
+	min-height: 660px
+	position: relative
+	z-index: 9
+	+ad(.3s)
+.b-wrap3
+	background-image: url("../../media/img/Teams/Teams3.jpg")
+	background-size: cover
+	background-repeat: no-repeat
+	display: block
+	width: 100%
+	min-height: 660px
+	position: relative
+	z-index: 8
+	+ad(.6s)
+
+/* Sratr Schedule Block */
+.block-Schedule
+	position: relative
+	margin-top: 105px
+	margin-bottom: 17px
+	.video-block
+		.wrap-video
+			height: 330px
+			margin-top: 30px
+			iframe
+				border: none
+		p 
+			margin-top: 33px
+			font-size: em(18px)
+	.content-Schedule
+		margin-bottom: 123px
+		height: 316px
+	.btn
+		display: block 
+		width: 170px
+		height: 65px
+		transform: skew(20deg)
+		margin: 0 auto
+		border: 2px solid #f4f4f4
+		border-radius: 10px
+		margin-right: 11px
+		>	span
+			display: inline-block
+			transform: skew(-20deg)
+			font-family: "RobotoCondensedRegular",sans-serif
+			font-size: em(24px)
+			margin-top: 10px
+			margin-left: -3px
+			width: 178px
+			text-align: center
+			+mt(.5s)
+		&.btn-link-g
+			background-color: #f4f4f4
+			color: #000
+			&:hover
+				border: 2px solid $accent
+			&:active
+				transform: translateY(2px)
+				background-color: darken(#f4f4f4, 6%)
+				>	span
+					transform: skew(0deg)
+		&.on 
+			border: 2px solid $accent
+			background-color: #FFF
+	a 
+		color: #000
+	h2
+		color: #21201f
+	.link-wrap
+		margin: 30px 0
+		>	a 
+			float: left
+
+.wrap-inner-s-1
+	display: block
+.wrap-inner-s-2
+	display: none
+.wrap-inner-s-3
+	display: none
+
+.table-Schedule
+	font-family: "KanitLight",sans-serif
+	font-size: em(18px)
+	font-weight: 100
+	color: #3b3a39
+	text-align: left
+	width: 100%
+	.pad-table
+		th
+			padding-top: 12px
+			padding-bottom: 20px
+			font-family: "KanitMedium",sans-serif
+			font-weight: 100
+	tr,th 
+		padding: 8px 8px 8px 17px
+		font-family: "KanitLight",sans-serif
+		font-weight: 200
+
+.p-gray
+	background-color: #f4f4f4
+	> th 
+		padding: 14px 8px 14px 17px
+
+//Start Coaches Block
+.b-wrap-Coaches
+	background-image: url("../../media/img/coaches/bg-img-coaches.jpg")
+	background-size: cover
+	background-repeat: no-repeat
+	display: block
+	width: 100%
+	padding-bottom: 99px
+	.text-wrap
+		margin-top: 88px
+		line-height: 1
+		p 
+			font-family: "RobotoCondensedLight",sans-serif 
+			font-size: em(28px)
+			margin-top: 10px
+			letter-spacing: 0.9px
+			font-weight: 100 
+	.car-img-wrap
+		width: 255px
+		height: 255px
+		margin: 35px auto 0 auto
+		+mt(.5s)
+	.car-text-wrap
+		line-height: 1
+		width: 90%
+		margin: auto
+		h4
+			text-transform: uppercase
+			margin-top: 52px			
+			+mt(.5s)
+		h5
+			font-family: "KanitLightItalic",sans-serif
+			font-size: em(24px)
+			margin-top: 7px
+			+mt(.5s)
+		p 
+			font-family: "KanitRegular",sans-serif
+			font-size: em(18px)
+			margin-top: 30px
+			line-height: 1.3
+			font-weight: 200
+
+	.car-btn-wrap
+		margin-top: 60px
+		.btn 
+			width: 180px
+	.carousel-wrap-coaches
+		position: relative
+		.owl-nav.disabled
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			> div
+				position: absolute
+				top: 210px
+				left: -167px
+				font-size: 50px
+				color: #fff
+				+mt(.5s)
+				&:hover
+					color: $accent
+				&.owl-next
+					right: -167px
+					left: auto
+
+.carousel-item-coaches
+	&:hover
+		.car-text-wrap
+			h4
+				color: $accent
+			h5
+				color: #fff
+
+.coaches-animated1,.coaches-animated3
+	+ad(.4s)
+
+/* Start Recent News Block  */
+.block-News
+	.text-wrap
+		margin-top: 100px
+		margin-bottom: 30px
+	.news-animated2
+		margin-left: 10px
+	.news-animated3
+		margin-left: 20px
+	.carousel-item-news
+		height: 520px
+		width: 370px
+		.car-img-wrap
+			+mt(.5s)
+		.car-date-wrap
+			display: block
+			position: relative
+			top: -50px
+			background-image: url("../../media/img/block-o.png")
+			background-repeat: no-repeat
+			background-size: cover
+			height: 60px
+			width: 80px
+			+mt(.5s)
+			p 
+				font-family: "RobotoCondensedRegular",sans-serif
+				margin-left: 15px 
+				padding-top: 5px
+				line-height: 1.5
+				color: #fff
+		.car-text-wrap
+			position: relative
+			top: -45px
+			p 
+				font-family: "RobotoCondensedRegular",sans-serif
+				color: #000
+				font-size: em(21px)
+				line-height: 1.4
+				letter-spacing: 0.5px
+				+mt(.5s)
+	.carousel-wrap-news
+			position: relative
+			.owl-nav.disabled
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				> div
+					position: absolute
+					top: 231px
+					left: -150px
+					font-size: 48px
+					color: #000
+					+mt(.5s)
+					&:hover
+						color: $accent
+					&.owl-next
+						right: -150px
+						left: auto
+
+.carousel-item-news
+	&:hover
+		.car-img-wrap
+			opacity: 0.8
+		.car-date-wrap
+			top: -100px
+		.car-text-wrap
+			p 
+				color: $accent
+
+.news-animated2
+	+ad(.3s)
+.news-animated3
+	+ad(.6s)
+
+/*  Start Club Gallery Block  */
+.block-Club-Gallery
+	.container-fluid
+	padding: 0
+	.gallery-m
+		padding: 0
+	.text-wrap
+		line-height: 1.1
+		p 
+			margin-top: 0px
+			font-family: "RobotoCondensedRegular",sans-serif 
+			font-size: em(28px)
+			letter-spacing: 0.9px
+
+	.filters-by-category
+		+ad(.3s)
+		ul
+			margin: 25px 0 55px
+			padding: 0
+			list-style: none
+			li 
+				display: inline-block
+	.filters-by-category
+		.btn
+			display: block 
+			width: 205px
+			height: 65px
+			transform: skew(20deg)
+			margin: 5px auto
+			border: 2px solid #f4f4f4
+			border-radius: 10px
+			margin-right: 11px
+			>	span
+				display: inline-block
+				transform: skew(-20deg)
+				font-family: "RobotoCondensedRegular",sans-serif
+				font-size: em(22px)
+				margin-top: 10px
+				width: 178px
+				text-align: center
+				+mt(.5s)
+			&.btn-link-g
+				background-color: #f4f4f4
+				color: #000
+				&:hover
+					border: 2px solid $accent
+				&:active
+					transform: translateY(2px)
+					background-color: darken(#f4f4f4, 6%)
+					>	span
+						transform: skew(0deg)
+			&.btn-link-g.selected
+				border: 2px solid $accent
+				background-color: #fff
+	.gallery__item
+		position: relative
+		float: left
+		width: 24.99%
+		overflow: hidden
+		background: #071638
+		.gallery__item__img
+			background-color: #303030
+			+mt(.5s)
+			img
+				width: 100%
+				opacity: 0.5
+				+mt(.5s)
+			.hover-link-g
+				position: absolute
+				display: block
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				opacity: 0
+				color: #fff
+				.inside
+					position: relative
+					top: 50%
+					transform: translateY(-50%)
+					height: 100%
+					i 
+						font-size: 70px
+						position: absolute
+						top: 50%
+						left: 50%
+						transform: translate(-50%, -50%)
+					p 
+						font-size: em(19px)
+						font-family: "KanitRegular",sans-serif
+						margin: 0 20px
+						position: absolute
+						bottom: 20px
+			.block-play-wrap
+				position: absolute
+				display: block
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				opacity: 1
+				color: #fff
+				.b-play
+					position: relative
+					top: 50%
+					margin: 0 auto
+					transform: translateY(-50%)
+					width: 100px
+					height: 60px
+					border-radius: 10px
+					background-color: #141e1e
+					opacity: 0.8
+					i 
+						font-size: 30px
+						position: relative
+						top: 25%
+						transform: translateY(-25%)
+	.btn-wrap-gallery
+		.btn.btn-link-w
+			width: 235px
+			margin-top: 60px
+			span 
+				margin-left: 0
+
+.block-Club-Gallery
+	.text-wrap
+		p 
+			font-family: "RobotoCondensedLight",sans-serif
+	.gallery__item
+		&:hover
+			.gallery__item__img
+				background-color: #FFF
+				img
+					opacity: 1
+			.hover-link-g
+				opacity: 1
+			.block-play-wrap
+				display: none
+	.gallery-m
+		+ad(.6s)
+/* Start Partners Block*/
+.block-Partners
+	margin-bottom: 140px
+	.text-wrap
+			margin-top: 130px
+			line-height: 1
+			p 
+				margin-top: 7px
+				font-family: "RobotoCondensedLight",sans-serif 
+				font-size: em(28px)
+				letter-spacing: 0.9px
+	.carousel-wrap-partners
+		margin-top: 20px
+		+ad(.5s)
+		.carousel-item-partners
+			margin: 15px
+			a 
+				display: block
+				img
+					max-width: 80%
+					margin-top: 20px
+					margin-left: auto
+					margin-right: auto
+					filter: none
+					+mt(.4s)
+					&:hover
+						filter: grayscale(100%)
+				.min-img1
+					margin-top: -5px
+				.min-img2
+					margin-top: -5px
+					width: 50%
+	.carousel-wrap-partners
+		position: relative
+		.owl-nav.disabled
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				> div
+					position: absolute
+					top: 12px
+					left: -166px
+					font-size: 48px
+					color: #000
+					+mt(.5s)
+					&:hover
+						color: $accent
+					&.owl-next
+						right: -166px
+						left: auto
+	.block-wrap-sponsor
+		background-image: url("../../media/img/bg-img-sponsor.jpg")
+		background-size: cover center
+		background-repeat: no-repeat
+		margin: 127px 0px 0 0px
+		+ad(.8s)
+		a 
+			display: block
+			font-family: "RobotoCondensedRegular", sans-serif
+			font-weight: normal
+			font-size: em(78px)
+			letter-spacing: 1.3px
+			padding: 38px 40px
+			background-color: rgba(0,0,0,0.4)
+			+mt(.5s)
+			&:hover
+				color: $accent
+				background-color: rgba(0,0,0,0.1)
+
+/* Start Subscribe Block */
+.block-Subscribe
+	.bg-subscribe1
+		display: block
+		position: relative
+		background-image: url("../../media/img/bg-img-subscribe1.jpg")
+		background-size: cover
+		background-repeat: no-repeat
+		max-width: 100%
+		.bg-dark1
+			background-color: rgba(35,35,35,0.9)
+		.text-wrap
+				padding-top: 55px
+				line-height: 1.2
+				p
+					display: block
+					width: 50% 
+					margin: 20px auto 0 auto
+					line-height: 1.3
+					font-family: "KanitRegular",sans-serif
+					font-size: em(18px)
+				+ad(.2s)
+		.form-wrap
+			margin-top: 35px
+			padding-bottom: 10px
+			+ad(.4s)
+			.form-control
+				display: block 
+				width: 30%
+				height: 60px
+				transform: skew(20deg)
+				margin-left: 32.2%
+				border: 2px solid #fff
+				border-radius: 10px
+				color: $accent
+				padding-left: 20px
+				+mt(.5)
+				&::-webkit-input-placeholder
+					display: inline-block
+					transform: skew(-20deg)
+					outline: 0
+					opacity: 1
+				&::-ms-input-placeholder
+					display: inline-block
+					transform: skew(-20deg)
+					outline: 0
+					opacity: 1
+				&:-moz-placeholder
+					display: inline-block
+					transform: skew(-20deg)
+					outline: 0
+					opacity: 1
+				&::-moz-placeholder
+					display: inline-block
+					transform: skew(-20deg)
+					outline: 0
+					opacity: 1
+				&:focus
+					background-color: #FFF
+					border: 2px solid $accent
+					padding-left: 20px
+					&::-webkit-input-placeholder
+						display: inline-block
+						transform: skew(-20deg)
+						outline: 0
+						opacity: 0
+						padding-left: 20px
+					&::-ms-input-placeholder
+						display: inline-block
+						transform: skew(-20deg)
+						outline: 0
+						opacity: 0
+						padding-left: 20px		
+			button 
+				position: relative
+				top: -60px
+				left: 12.8%
+				width: 180px
+				height: 60px
+				span
+					margin: 0
+	.bg-subscribe2
+		display: block
+		position: relative
+		background-image: url("../../media/img/bg-img-subscribe2.jpg")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center top
+		max-width: 100%
+		.bg-dark2
+			background-color: rgba(89,89,89,0.9)
+			padding-top: 15px
+			padding-bottom: 15px
+			.b-wrap-soc-network
+				margin: 55px 0 45px 0
+				.icon-wrap
+					a 
+						&:hover 
+							i,p
+								color: #fff
+						i 
+							font-size: 36px
+							color: $accent
+							+mt(.5s)	
+						p 
+							font-family: "KanitRegular",sans-serif
+							font-size: em(18px)
+							letter-spacing: 0.3px
+							margin: 18px 0 25px 0
+							color: $accent
+							+mt(.5s)
+				.facebook-if
+					iframe
+						display: block
+						margin: 0 auto
+				.content-wrap
+					text-align: left
+					line-height: 1
+					margin-top: 33px
+					.img-fb
+						margin-left: -15px
+					.bbc
+						display: block
+						background-color: #323232
+						border-radius: 2px
+						padding-top: 20px
+						.bef
+							display: block
+							position: relative
+							&::before
+								content: ''
+								position: absolute
+								bottom: -121px
+								left: 20px
+								@include triangle(40px,#323232, right)
+						.img-wrap
+							float: left
+							width: 14%
+							margin-left: 20px
+						.content-text-wrap
+							float: left
+							width: 75%
+							padding-right: 10px
+							&:hover
+								h6
+									color: $accent
+							h6 
+								font-family: "KanitRegular",sans-serif
+								font-size: em(14px)
+								color: #949494
+								+mt(.5s)
+							p 
+								margin: 10px 0 20px 0
+								line-height: 1.2
+								+mt(.5s)
+				.instafeed-wrap
+					.instafeed
+						margin-top: 7px
+						margin-left: 19px
+						a 
+							display: block
+							position: relative
+							float: left
+							width: 117px
+							height: 117px
+							margin: 0 10px 10px 0
+							&::after
+								content: ""
+								display: block
+								position: absolute
+								z-index: 1
+								left: 0	
+								top: 0
+								background-color: $accent
+								height: 100%
+								width: 100%
+								opacity: 0
+								+mt(.5s)
+							&:hover
+								&::after
+									opacity: 0.8
+							img
+								display: block
+								width: 100%
+								height: 100%
+
+.subscribe-animated1
+	margin-left: -10px !important
+.subscribe-animated2
+	+ad(.4s)
+.subscribe-animated3
+	+ad(.7s)
+	margin-right: -10px !important
+/* FOOTER */
+footer
+	.map-wrap
+		height: 420px
+		#map
+			width: 100%
+			height: 100%
+			background-image: url("../../media/img/map.jpg")
+			background-size: cover
+			background-position: center
+			position: relative
+			&:hover
+				i 
+					color: #000
+			i 
+				color: $accent
+				font-size: 50px
+				position: absolute
+				left: 40%
+				top: 33%
+				+mt(.3s)
+	.content-wrap-footer
+		height: 420px
+		background-color: #242424
+		&::before 
+			content: ''
+			display: none
+			position: absolute
+			bottom: 0px
+			left: -85px
+			background-color: #242424
+			height: 420px
+			width: 220px
+			transform: skew(-22deg)
+		.content-footer
+			position: relative
+			top: 0
+			right: 0
+			padding-left: 30px
+			.logo-footer
+				a 
+					display: block
+					width: 333px
+					padding-top: 55px
+			.b-contacts-wrap
+				margin-top: 45px
+				line-height: 1.3
+				p 
+					margin: 0
+					font-family: "KanitRegular",sans-serif
+					font-size: em(19px)
+				.b-inner1
+					float: left
+					width: 32%
+					a 
+						font-family: "KanitRegular",sans-serif
+						text-decoration: underline
+						font-size: em(19px)
+						+mt(.5s)
+						&:hover,:focus
+							.b-contacts-wrap
+								.b-inner1
+									>	a
+										text-decoration: none
+										color: $accent
+				.b-inner2
+					float: left
+					width: 49%
+					.number
+						font-family: "RobotoCondensedRegular",sans-serif
+						font-size: em(40px)
+						line-height: 1.2
+						letter-spacing: 2px
+			.copyright
+				margin-top: 70px
+				p 
+					font-family: "KanitRegular",sans-serif
+
+.email-link
+	&:hover
+		text-decoration: none
+		color: $accent
+
+/*NEW Page, About*/
+.about-content-block
+	.car-item-bg1
+		background-image: url("../../media/img/about/bg-img-about-carousel.jpg")
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: top center
+	.car-item-bg2
+		background-image: url("../../media/img/carousel/Carousel1.jpg")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: top center
+	.car-item-bg3
+		background-image: url("../../media/img/carousel/Carousel3.jpg")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: top center
+	.carousel-item-about-players
+		width: 100%
+		height: 768px
+		.car-content
+			position: relative
+			top: 263px
+			h4
+				color: #fff 
+				line-height: 35px
+				letter-spacing: 0.6px
+				position: relative
+				top: -300px
+				opacity: 0
+				+mt(.9s)
+				+mtd(.45s)
+			h2
+				line-height: 65px
+				position: relative
+				margin-top: 10px
+				bottom: -300px
+				opacity: 0
+				+mt(.9s)
+			p
+				color: #fff 
+				font-size: em(21px)
+				font-family: "RobotoCondensedRegular",sans-serif
+				width: 42%
+				margin: 50px auto 65px auto
+				line-height: 1.34
+				letter-spacing: 0.6px
+				position: relative
+				bottom: -300px
+				opacity: 0
+				+mt(.9s)
+				+mtd(.25s)
+			a 
+				position: relative
+				width: 200px
+				transform: skew(23deg)
+				opacity: 0
+				>	span
+					transform: skew(-23deg)
+					margin-left: 0px
+	.owl-item.active
+		.carousel-item-about-players
+				.car-content
+					h4
+						top: 0
+						opacity: 1
+					h2
+						bottom: 0
+						opacity: 1
+					p 
+						bottom: 0
+						opacity: 1
+					a
+						opacity: 1
+	.owl-nav
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		display: block
+		> div
+			position: absolute
+			top: 350px
+			left: 50px
+			font-size: 47px
+			color: #fff
+			+mt(.5s)
+			&:hover
+				color: $accent
+			&.owl-next
+				right: 50px
+				left: auto
+	.carousel-item-about-sections.section1
+		background-image: url("../../media/img/about/bg-img-section1.jpg")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: top center
+		height: 658px
+		width: 100%
+	.carousel-item-about-sections.section2
+		background-image: url("../../media/img/about/bg-img-section2.jpg")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: top center
+		height: 658px
+		width: 100%
+	.carousel-item-about-sections.section3
+		background-image: url("../../media/img/about/bg-img-section3.jpg")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: top center
+		height: 658px
+		width: 100%
+	.carousel-item-about-sections
+		a
+			display: block
+			height: 100%
+			width: 100%
+			h3
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				width: 100%
+				line-height: 40px
+				height: 60px
+				z-index: 2
+				color: #000
+				+mt(.5s)
+				span
+					font-size: em(7px)
+					+mt(.5s) 
+			&::after
+				content: ""
+				display: block
+				position: absolute
+				z-index: 1
+				left: 0
+				top: 0
+				background-color: #FFF
+				height: 100%
+				width: 100%
+				opacity: 0.7
+				+mt(.5s)
+		&:hover
+			a
+				transform: scale(1.1)
+				h3
+					color: $accent
+					span
+						color: #fff
+				&::after
+					opacity: 0
+
+.about-info-block
+	margin-bottom: 115px 
+	.history-block
+		margin-top: 110px
+		height: 500px
+		h2 
+			line-height: 1.4
+			letter-spacing: 0.9px
+			margin-left: -15px
+			margin-bottom: 40px
+		.btn 
+			width: 93%
+			margin: 0 -20px 15px 0
+			border: 2px solid #f4f4f4
+			background-color: #f4f4f4
+			>	span
+				font-size: em(28px)
+				margin-top: 10px
+				margin-left: 40px
+				letter-spacing: 1px
+				color: #000
+			&.on 
+				border: 2px solid $accent
+				background-color: #fff
+		.info-spoiler2,.info-spoiler3
+			display: none
+			margin-right: 35px
+			margin-left: 16px
+			text-align: justify
+		.info-spoiler1
+			margin-left: 16px
+			margin-right: 35px
+			text-align: justify
+			p 
+				line-height: 1.5
+
+	.infoCommittee-wrap
+		margin-left: 0
+
+/*NEW Page, Coaches Block*/
+body.Pages 
+	.block-Coaches
+		margin-bottom: 133px
+
+/*NEW Page, Statistic Block*/
+.statistic-block
+	margin-bottom: 95px
+	.text-wrap
+		h2
+			line-height: 65px
+			letter-spacing: 1px
+		h4 
+			line-height: 40px
+			margin-top: 9px
+	.statistic-wrap-content
+		border-right: 1px solid #f3f3f3
+		margin-top: 65px
+		height: 280px
+		+mt(.5s) 
+		.icon
+			+mt(.5s) 
+			i 
+			font-size: 100px
+			color: $accent
+		h3
+			line-height: 33px
+			font-size: em(50px)
+			+mt(.5s) 
+		h4
+			line-height: 35px
+			letter-spacing: 1px
+			font-size: em(28px)
+			margin-top: 15px
+			padding-bottom: 25px
+		&:hover
+			.statistic-wrap-content
+			background-color: #48494a
+			.icon 
+				transform: rotateY(180deg)
+				i 
+					color: #fff
+			h3
+				color: $accent
+				margin-top: 15px
+			h4
+				color: #fff
+
+/*NEW Page, Gallery Block*/
+body.Pages
+	.block-Club-Gallery
+		margin-bottom: 140px
+		.text-wrap
+			h2
+				line-height: 65px
+				letter-spacing: 1px
+			p 
+				line-height: 40px
+				margin-top: 9px !important
+		.filters-by-category ul
+			margin-top: 20px
+
+/*NEW Page, Schedule*/
+.schedule-block
+	margin-bottom: 139px
+	.text-wrap
+		h2
+			line-height: 65px
+			letter-spacing: 1px
+		h4 
+			line-height: 40px
+			margin-top: 9px
+	.links-wrap
+		margin-top: 60px
+		margin-bottom: 40px
+		ul
+			list-style: none
+			text-align: center
+			li 
+				display: inline-block
+				.btn-link-g
+					background-color: #f4f4f4
+					border: 2px solid #f4f4f4
+					width: 190px
+					margin-right: 10px
+					> span
+						color: #000
+						width: 180px
+						width: 175px
+					&.on 
+						border: 2px solid $accent
+						background-color: #fff
+					&:hover
+						border: 2px solid $accent
+	table
+		width: 100%
+		text-align: left
+		font-family: "KanitLight",sans-serif
+		tr 
+			th 
+				font-weight: 200
+				padding: 9px 8px 5px 5px
+				&:first-child
+					padding-left: 30px !important
+					width: 20%
+				&:nth-child(2)
+					width: 19%
+				&:nth-child(3)
+					width: 34%
+				&:nth-child(4)
+					width: 16%
+				&:nth-child(5)
+					width: 11%
+				img
+					height: 31px
+					width: 31px
+					margin-right: 20px
+			&.p-gray
+				th 
+					padding: 12px 8px 12px 5px
+			&.orange-text
+				th
+					padding-bottom: 15px
+					font-family: "KanitMedium",sans-serif
+	.btn-view
+		margin-top: 60px
+		background-color: #fff
+		border: 2px solid $accent
+		> span
+			color: #000
+			margin-left: 35px
+			+mt(.3s)
+		&:hover
+			background-color: $accent
+			> span
+				color: #fff
+	.table-2,.table-3
+		display: none
+		+mt(.3s)
+
+	/* Partners-page-block */
+.partners-page-block
+	.text-wrap
+		h2
+			line-height: 65px
+			letter-spacing: 1px
+		h4 
+			line-height: 40px
+			margin-top: 9px
+	.sponsors-block
+		margin-top: 80px
+		margin-bottom: 130px
+		.carousel-item-sponsor
+			margin: 0 10px
+			.car-img-wrap
+				height: 170px
+				.img-sponsor1
+					height: 95%
+					width: 80%
+					position: relative
+					left: 15px
+				.img-sponsor2
+					height: 73%
+					width: 72%
+					position: relative
+					top: 20px
+					left: 55px
+				.img-sponsor3
+					width: 90%
+					position: relative
+					top: 15px
+					left: 20px
+			.car-text-wrap
+				p 
+					line-height: 1.45
+			.car-btn-wrap
+				margin: 40px auto 0 auto
+				.btn
+					width: 225px !important 
+					> span
+						margin-left: 10px
+		.block-wrap-sponsor
+			background-image: url("../../media/img/bg-img-sponsor.jpg")
+			background-size: cover center
+			background-repeat: no-repeat
+			margin: 143px 0px 0 0px
+			+ad(.8s)
+			a 
+				display: block
+				font-family: "RobotoCondensedRegular", sans-serif
+				font-weight: normal
+				font-size: em(78px)
+				letter-spacing: 1.3px
+				padding: 38px 40px
+				background-color: rgba(0,0,0,0.4)
+				+mt(.5s)
+				&:hover
+					color: $accent
+					background-color: rgba(0,0,0,0.1)
+	.meet-partners-block
+		margin-bottom: 140px
+		.all-partners-block-wrap
+			margin-top: 40px
+			.img-wrap-partner
+				height: 225px
+				width: 100%
+				+mt(.5s)
+				img
+					display: block
+					position: absolute
+					left: 50%
+					top: 50%
+					transform: translate(-50%, -50%)
+					filter: none
+					+mt(.3s)
+				&:hover
+					img
+						filter: grayscale(100%)
+				.img-hover-part
+					width: 170px
+					height: 58px
+				.img-hover-part2
+					width: 220px
+
+/* Contacts Page */
+#success,#error
+	display: none
+	height: 70px
+#success
+	color: #2990d6
+#error
+	color: #c0392b
+.page-contacts-block
+	margin-bottom: 145px
+	.text-wrap
+		h2
+			line-height: 65px
+			letter-spacing: 1px
+			margin-bottom: 45px
+	.contact-info-wrap
+		p
+			font-family: "KanitRegular",sans-serif !important
+			font-size: em(18px)
+			line-height: 1.4
+			margin-bottom: 22px
+		a 
+			color: $accent
+			font-family: "KanitRegular",sans-serif !important
+			text-decoration: underline
+			&:hover
+				color: #000
+		h3
+			margin-bottom: 32px
+		.number-block
+			margin-top: 72px
+			margin-bottom: 50px
+			p
+				margin: 0
+			.number
+				font-family: "RobotoCondensedRegular",sans-serif !important
+				font-size: em(44px)
+				margin-top: 0
+				line-height: 45px
+		.icon-wrap
+			p 
+				margin: 0
+			a
+				text-decoration: none
+			.circle-border
+				display: inline-block
+				border: 2px solid $accent
+				border-radius: 100px
+				height: 54px
+				width: 54px
+				margin-top: 13px
+				margin-right: 10px
+				+mt(.5s)
+				&:hover
+					border-color: #21201f
+					background-color: #21201f
+					i 
+						color: #fff
+				i 
+					position: relative
+					top: 14px
+					left: 15px
+					color: #21201f
+					font-size: 20px
+					+mt(.5s)
+	.message-wrap
+		margin-left: -5px
+		h3
+			margin-bottom: 30px
+			width: 98%
+			text-align: center
+.boxed-form			
+	.form-group
+		margin-bottom: 13px
+		.form-control
+			border: 1px solid #dbdbdb
+			border-radius: 1px
+			box-shadow: none
+			color: #000
+			padding: 15px
+			display: block
+			width: 98%
+			font-family: "RobotoCondensedLight",sans-serif 
+			font-size: em(20px)
+			line-height: 25px
+			+mt(.3s)
+			&::-webkit-input-placeholder
+				color: #dbdbdb
+				opacity: 1
+			&:-moz-placeholder
+				color: #dbdbdb
+				opacity: 1
+			&::-moz-placeholder
+				color: #dbdbdb
+				opacity: 1
+			&:-ms-input-placeholder
+				color: #dbdbdb
+				opacity: 1
+			&:focus
+				border: 1px solid $accent
+				outline: 0
+				box-shadow:  0px 0px 8px 0px rgba(255, 126, 0, 0.56)
+		textarea.form-control
+			width: 98%
+			height: 338px
+			margin-bottom: 40px
+	.btn 
+		width: 250px
+		transform: skew(23deg)
+		border-radius: 8px
+		background-color: #FFF
+		margin-left: 8px
+		> span
+			transform: skew(-23deg)
+			margin-left: 0
+			margin-top: 0px
+		&:hover
+			color: #fff
+			background-color: $accent
+
+/* Block Blog-Posts */
+.block-posts
+	.text-wrap
+		h2
+			line-height: 65px
+			letter-spacing: 1px
+	.blog-post
+		margin-left: -15px
+		margin-right: -5px
+		margin-top: 73px
+		.post-image
+			position: relative
+			margin-bottom: 20px
+			a 
+				img
+					width: 100%
+					height: 483px
+			.post-video
+				height: 510px
+				padding-top: 30px
+				iframe
+					border: none
+			.post-img-carousel-wrap
+				padding-top: 27px
+				.owl-nav.disabled
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					display: block
+					> div
+						position: absolute
+						top: 235px
+						left: 23px
+						font-size: 47px
+						color: #fff
+						+mt(.5s)
+						&:hover
+							color: $accent
+						&.owl-next
+							right: 23px
+							left: auto
+			.post-music
+				padding-top: 70px
+				iframe
+					height: 159px
+					width: 100%
+					border: 0
+			.blog-post .post-music object, .blog-post .post-music embed
+				width: 100%
+				height: auto
+				border: 0
+		.post-meta
+			list-style: none
+			position: relative
+			padding: 0
+			font-family: "RobotoCondensedRegular",sans-serif
+			font-size: em(22px)
+			margin-top: 42px
+			letter-spacing: 1px
+			margin-bottom: 10px
+			li 
+				display: inline-block
+				padding-right: 42px
+			.post-date
+				display: block
+				background-image: url("../../media/img/block-o.png")
+				background-repeat: no-repeat
+				background-position: cover
+				height: 60px
+				width: 80px
+				position: absolute
+				bottom: 50px
+				font-size: em(12px)
+				z-index: 2
+				+mt(.5s)
+				span
+					margin-left: 10px 
+					margin-top: 5px
+					line-height: 24px
+					display: block
+					letter-spacing: 0.4px
+					width: 100%
+					color: #fff
+			.post-message
+				i 
+					color: $accent
+					position: relative
+					top: 5px
+					left: -4px
+		.post-title
+			font-size: em(48px)
+			letter-spacing: 1px
+			a 
+				color: #000
+				font-family: "RobotoCondensedRegular", sans-serif
+				&:hover
+					color: $accent
+		.post-teaser
+			p 
+				margin-top: 8px
+			.inside
+				padding-left: 120px
+				position: relative
+				p 
+					font-family: "KanitLightItalic",sans-serif
+				i 
+					font-size: 69px
+					position: absolute
+					top: 0
+					left: 20px
+					color: $accent
+
+		.btn
+			margin-top: 35px
+			margin-left: 10px
+			width: 200px
+
+		.post-meta.meta-bottom
+			margin-top: 23px		
+			.date-bottom
+				position: relative
+				bottom: 0
+				display: inline-block
+				margin-right: 17px
+	.side-block
+		margin-top: 73px
+		margin-bottom: 90px
+		margin-left: 5px
+		font-family: "RobotoCondensedRegular", sans-serif 
+		h3
+			font-size: em(28px)
+			line-height: 20px
+			letter-spacing: 1px
+			margin-bottom: 35px
+		.calendar
+			.calendar__header
+				text-transform: uppercase
+				letter-spacing: 1.3px
+				margin-left: 3px
+				padding-bottom: 20px
+			.calendar__footer
+				padding: 14px 0 0 5px
+				a 
+					color: #000
+					font-family: "RobotoCondensedRegular",sans-serif
+					font-size: em(15px)
+			table
+				background: #fff
+				border-collapse: collapse
+				color: #000
+				font-size: em(18px)
+				width: 100%
+				max-width: 350px
+				tr
+					th 
+						padding: 3px 11px 
+						margin: 1px
+						border-bottom: 2px solid #f3f3f3
+					td 
+						cursor: pointer
+						padding: 5px 11px
+						+mt(.3s)
+						&.selected
+							background-color: #000
+							color: #fff
+						&:hover
+							background-color: #eee
+							color: $accent
+	.category-list
+		padding: 0
+		list-style: none
+		li 
+			position: relative
+			padding: 9px 0 10px 35px
+			line-height: 20px
+			a 
+				color: #000
+				font-family: "RobotoCondensedRegular",sans-serif
+				font-size: em(18px)
+				letter-spacing: 0.4px
+				+mt(.3s)
+				&::after
+					content: "\e910"
+					position: absolute
+					top: 11px
+					left: 2px
+					display: block
+					font-family: "Football"
+					font-size: 15px
+					color: $accent
+				&:hover
+					color: $accent
+	.tags-list
+		list-style: none
+		margin-top: 30px
+		padding: 0
+		li 
+			display: inline-block
+			padding: 0
+			margin-bottom: 8px
+			margin-right: 5px
+			a 
+				display: block
+				background-color: #f0f0f0
+				color: #000
+				line-height: 35px
+				padding: 0px 15px
+				font-family: "RobotoCondensedRegular",sans-serif
+				font-size: em(18px)
+				border-radius: 2px
+				+mt(.4s)
+				&:hover
+					color: #fff
+					background-color: $accent
+
+.side-block.pad-minus
+	margin-top: 30px
+	margin-bottom: 40px
+	h3 
+		margin-bottom: 0
+	.blog-post.post-preview
+		margin-left: 0
+		margin-top: 20px
+		.post-image
+			a 
+				img
+					height: 190px
+		.post-meta 
+			margin-bottom: 0
+			.post-date
+				bottom: 30px
+		.post-title
+			font-size: em(22px)
+
+
+.blog-post.no-post-img
+	margin-top: 100px
+	.post-meta
+		margin-bottom: 5px
+	.btn 
+		margin-top: 50px
+.blog-post.pad-top
+	.post-image
+		padding-top: 28px 
+
+.btns-page-posts-wrap
+	margin: 100px 0 140px 10px
+	.btn 
+		width: 60px
+		height: 57px
+		display: inline-block
+		margin-right: 5px
+		> span
+			margin: 5px 24px
+		&.active
+			background-color: $accent
+			> span
+				color: #fff 
+
+	.side-block
+		margin-top: 73px 
+
+/* Block Blog-Post */
+.blog-post.page-post-home
+	.border-bot-post
+		border-bottom: 3px solid #f3f3f3
+		padding-bottom: 95px 
+		margin-top: 50px
+	.post-teaser 
+		.inside
+			margin: 50px 0
+
+.comments-block
+	margin-left: -15px
+	margin-top: 75px
+	.comment
+		margin: 45px 0 35px 0
+		.userpic
+			width: 70px
+			height: 120px
+			float: left
+			margin-right: 30px
+			font-size: 70px
+			text-align: center
+			position: relative
+			span 
+				position: absolute
+				top: 0
+				left: 0
+				color: $accent
+		.text
+			.meta
+				font-size: em(22px)
+				line-height: 27px
+			p 
+				line-height: 23px
+				margin-bottom: 0
+	.comment.replay
+		margin: 20px 0 30px 100px 
+.btns-page-posts-wrap.list-btns-page
+	margin: 95px 0 75px -5px
+.form-comments
+	margin-bottom: 142px
+	margin-left: -15px
+	.boxed-form
+		margin-top: 30px
+		textarea.form-control
+			height: 257px 
+//ALWAYS END
+@import "media"

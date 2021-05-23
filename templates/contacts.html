@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+{% include "blocks/head.html" %}
+
+<body class="Pages">
+<!-- preloader -->
+<div class="pl">
+    <div class="round1 anti"></div>
+    <div class="pl_r"></div>
+    <div class="pl_l"></div>
+</div>
+
+
+<div class="wrapper">
+
+    {% include "blocks/header.html" %}
+
+    <!-- Start Page-Content -->
+    <section id="page-content">
+
+        <!-- Start Breadcrumbs -->
+        <div class="breadcrumbs">
+            <ul class="breadcrumb t-center">
+                <li><a href="{% url "home" %}">home</a></li>
+                <li class="active">contacts</li>
+            </ul>
+        </div> <!-- End Breadcrumbs -->
+
+        <div class="page-contacts-block">
+            <div class="container">
+                <div class="row">
+
+                    <div class="text-wrap t-center">
+                        <h2>Contacts</h2>
+                    </div>
+
+                    <div class="col-md-8 col-md-push-4">
+                        <div class="message-wrap">
+                            <h3>Leave Your Message</h3>
+
+                            <!-- form-block -->
+                            <form id="contactform" class="boxed-form" name="contactform" method="post"
+                                  novalidate="novalidate">
+                                <div id="success">
+                                    <p>Your message was sent successfully!</p>
+                                </div>
+                                <div id="error">
+                                    <p>Something went wrong, try refreshing and submitting the form again.</p>
+                                </div>
+
+                                <!-- Hidden Required Fields -->
+                                <input type="hidden" name="project_name" value="Site Name">
+                                <input type="hidden" name="admin_email" value="Your email">
+                                <input type="hidden" name="form_subject" value="Form Subject">
+                                <!-- END Hidden Required Fields -->
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" value="" name="First_name"
+                                           placeholder="First name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" value="" name="Last_name"
+                                           placeholder="Last name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" value="" name="email" placeholder="Email"
+                                           required>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="message" rows="10" placeholder="Message"
+                                              class="form-control"></textarea>
+                                </div>
+
+                                <button class="btn btn-link-w" type="submit" id="submit"><span>leave a message</span>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-pull-8 padding-null">
+                        <div class="contact-info-wrap">
+                            <h3>Contact Info</h3>
+
+                            <p><span class="orange-text">American Football Club </span><br> 154 Bloomfield Way, Liberty,
+                                <br> ME 04949</p>
+                            <p>For current members: <br><a href="#">Info@youremail.com</a></p>
+                            <p>For new members: <br><a href="#">fornew@youremail.com</a></p>
+                            <p>Press/Media: <br><a href="#">press@youremail.com</a></p>
+                            <p>Sponsorship: <br><a href="#">sponsorship@youremail.com</a></p>
+
+                            <div class="number-block">
+                                <p>Call us:</p>
+                                <p class="number">1-800-1234567</p>
+                            </div>
+
+                            <div class="icon-wrap">
+
+                                <p>Be in touch:</p>
+
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <div class="circle-border">
+                                        <i class="icon-facebook"></i>
+                                    </div>
+                                </a>
+
+                                <a href="https://twitter.com/" target="_blank">
+                                    <div class="circle-border">
+                                        <i class="icon-twitter-logo-silhouette"></i>
+                                    </div>
+                                </a>
+
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <div class="circle-border">
+                                        <i class="icon-instagram-symbol"></i>
+                                    </div>
+                                </a>
+
+                                <a href="https://ru.pinterest.com/" target="_blank">
+                                    <div class="circle-border">
+                                        <i class="icon-pinterest-logo"></i>
+                                    </div>
+                                </a>
+
+                            </div> <!-- End Icon-wrap -->
+
+                        </div>
+                    </div>
+
+                </div> <!-- End Row -->
+            </div> <!-- End Container -->
+        </div> <!-- End Page-contacts-block -->
+
+
+    </section> <!-- End Page-Content-->
+
+    {% include "blocks/footer.html" %}
+
+
+</div> <!-- End Wrapper -->
+
+<div class="hidden"></div>
+
+{% include "blocks/js.html" %}
+
+</body>
+</html>

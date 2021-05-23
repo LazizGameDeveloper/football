@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+{% include "blocks/head.html" %}
+
+<body class="Pages">
+<!-- preloader -->
+<div class="pl">
+    <div class="round1 anti"></div>
+    <div class="pl_r"></div>
+    <div class="pl_l"></div>
+</div>
+
+
+<div class="wrapper">
+
+    {% include "blocks/header.html" %}
+
+    <!-- Start Page-Content -->
+    <section id="page-content">
+
+        <!-- Start Breadcrumbs -->
+        <div class="breadcrumbs">
+            <ul class="breadcrumb t-center">
+                <li><a href="{% url "home" %}">home</a></li>
+                <li class="active">about</li>
+            </ul>
+        </div> <!-- End Breadcrumbs -->
+
+        <!-- Start Welcome Block -->
+        <div class="welcome t-center">
+            <div class="container">
+                <h2><span class="orange-text">Welcome</span></h2>
+                <h4>Demand respect or expect defeat</h4>
+                <div class="text-welcome">
+                    <p>Founded in 1986, the American Football Club are members of the American Football and Cheerleading
+                        Federation. In addition, the American Football Club are members of both the National Federation
+                        of Sports and the USA Sports Association.</p>
+                    <p>As American Football Club we continually aspire to make our sports program attractive to all
+                        types of players, both elite and novice, and both large and small. During recent years, we have
+                        made a concerted effort to increase the access of our programs, especially in our youth program
+                        where we believe we are uniquely equipped to offer athletic activities and organizational
+                        support that alternative sports cannot provide. The main consolation from that year was that
+                        Phill Price, the Thrasher's linebacker, won the BAFL Rookie Of The Year Award. After appointing
+                        a new offensive coach, Len Scott, and training hard over the winter the 2006 season proved to be
+                        more successful for the AFC.
+                    </p>
+                </div>
+            </div>
+        </div> <!-- End Welcom Block -->
+
+        <!-- Start About-Content-Block -->
+        <div class="about-content-block t-center">
+            <div class="container-fluid padding-null">
+
+                <div class="carousel-wrap-about-players owl-carousel owl-theme">
+
+                    <div class="carousel-item-about-players car-item-bg1">
+                        <div class="car-content">
+                            <h4>The Greats</h4>
+                            <h2><span class="orange-text">Adam Smith</span></h2>
+                            <p>He was drafted by the Atlanta Falcons in the 1991 NFL Draft. He was with them for only
+                                one season before being traded off to the Green Bay Packers in 1992.</p>
+                            <a href="#" class="btn btn-link-o">
+                                <span>read more</span>
+                            </a>
+                        </div>
+                    </div> <!-- End Carousel-item-about-players-->
+
+                    <div class="carousel-item-about-players car-item-bg2">
+                        <div class="car-content">
+                            <h4>The Greats</h4>
+                            <h2><span class="orange-text">Max Grog</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium magnam non delectus
+                                nulla quos tempora iure inventore sed itaque saepe!</p>
+                            <a href="#" class="btn btn-link-o">
+                                <span>read more</span>
+                            </a>
+                        </div>
+                    </div> <!-- End Carousel-item-about-players-->
+
+                    <div class="carousel-item-about-players car-item-bg3">
+                        <div class="car-content">
+                            <h4>The Greats</h4>
+                            <h2><span class="orange-text">Antony Simons</span></h2>
+                            <p>Praesentium magnam non delectus nulla quos tempora iure inventore sed itaque saepe! He
+                                was with them for only to the Green Bay Packers in 1992.</p>
+                            <a href="#" class="btn btn-link-o">
+                                <span>read more</span>
+                            </a>
+                        </div>
+                    </div> <!-- End Carousel-item-about-players-->
+                </div> <!-- End carousel-wrap-about-players -->
+
+                <div class="carousel-wrap-about-sections owl-carousel owl-theme">
+                    <div class="carousel-item-about-sections section1">
+                        <a href="#">
+                            <h3><span class="orange-text">The</span><br>Club House</h3>
+                        </a>
+                    </div> <!-- End Carousel-item-about-sections-->
+
+                    <div class="carousel-item-about-sections section2">
+                        <a href="#">
+                            <h3><span class="orange-text">The</span><br>Championship</h3>
+                        </a>
+                    </div> <!-- End Carousel-item-about-sections-->
+
+                    <div class="carousel-item-about-sections section3">
+                        <a href="#">
+                            <h3><span class="orange-text">The</span><br>Facilities</h3>
+                        </a>
+                    </div> <!-- End Carousel-item-about-sections-->
+                </div><!-- End carousel-wrap-about-sections -->
+
+            </div> <!-- End container-fluid -->
+
+        </div> <!-- End About-Content-Block-->
+
+        <!-- About-info-block -->
+        <div class="about-info-block">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="history-block">
+
+                            <h2><span class="orange-text">Our </span>History</h2>
+
+                            <a href="#" class="btn btn-link-g spoiler-l1 on"><span>Formation</span></a>
+                            <div id="info-spol1" class="info-spoiler1">
+                                <p>The club was founded in December 1986 following a meeting in an Andover pub between
+                                    two local enthusiasts, Dave Scott & Andy Mountain. The following month, an informal
+                                    training session was held with a number of local players.</p>
+                            </div>
+
+                            <a href="#" class="btn btn-link-g spoiler-l2"><span>Playoffs</span></a>
+                            <div id="info-spol2" class="info-spoiler2">
+                                <p>The club was founded in December 1986 following a meeting in an Andover pub between
+                                    two local enthusiasts, Dave Scott & Andy Mountain. The following month, an informal
+                                    training session was held with a number of local players.</p>
+                            </div>
+
+                            <a href="#" class="btn btn-link-g spoiler-l3"><span>Early Years</span></a>
+                            <div id="info-spol3" class="info-spoiler3">
+                                <p>The club was founded in December 1986 following a meeting in an Andover pub between
+                                    two local enthusiasts, Dave Scott & Andy Mountain. The following month, an informal
+                                    training session was held with a number of local players.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="infoCommittee-wrap">
+                            <h2><span class="orange-text">Committee</span></h2>
+
+                            <div class="inner-text">
+                                <div class="line-block">
+                                    <p>President</p>
+                                    <p>Reinaldo Rivas</p>
+                                </div>
+                                <div class="line-block">
+                                    <p>Vice-President</p>
+                                    <p>Joe Rice</p>
+                                </div>
+                                <div class="line-block">
+                                    <p>Treasurer</p>
+                                    <p>Luis Griffith</p>
+                                </div>
+                                <div class="line-block">
+                                    <p>Social Secretaries</p>
+                                    <p>Thomas Roy and Scott Ellis</p>
+                                </div>
+                                <div class="line-block">
+                                    <p>Equipment Manager</p>
+                                    <p>William Gregg</p>
+                                </div>
+                                <div class="line-block">
+                                    <p>Development Team</p>
+                                    <p>Donald Davis, Paul Bristow
+                                        and Aaron Watson</p>
+                                </div>
+                                <div class="line-block">
+                                    <p>Fitness & Nutrition Secretary</p>
+                                    <p>Kenneth Lauterbach</p>
+                                </div>
+                            </div>
+                        </div><!-- End infoCommittee-wrap -->
+                    </div>
+
+                </div> <!-- End row-->
+            </div> <!-- End cantainer-->
+        </div> <!-- End About-info-block-->
+
+    </section> <!-- End Page-Content-->
+
+    <!-- Start Page-Footer -->
+    {% include "blocks/footer.html" %}
+
+</div> <!-- End Wrapper -->
+
+<div class="hidden"></div>
+
+
+{% include "blocks/js.html" %}
+
+</body>
+</html>

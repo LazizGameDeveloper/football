@@ -1,0 +1,82 @@
+<header class="main-head clearfix">
+    <div class="container">
+        <div class="bgc-header"></div>
+        <div class="header-top">
+            <div class="row">
+
+                <div class="mini-menu hidden-lg hidden-md">
+                    <a href="#" class="toggle-mnu"><span></span></a>
+                </div> <!-- End Mini-menu -->
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <a href="{% url "home" %}" class="logo"><img src="/media/img/logo.png" alt=""></a>
+                </div>
+
+                <div class="col-lg-3 col-md-4 hidden-sm hidden-xs">
+                    <h1>Join our club</h1>
+                </div>
+
+                <div class="col-lg-5 col-md-4 hidden-sm hidden-xs">
+                    <div class="row">
+                        <div class="col-lg-6 hidden-md hidden-sm hidden-xs">
+                            <p>We are always welcoming of new members</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="icon-wrap">
+
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <div class="circle-border">
+                                        <i class="icon-facebook"></i>
+                                    </div>
+                                </a>
+
+                                <a href="https://twitter.com/" target="_blank">
+                                    <div class="circle-border">
+                                        <i class="icon-twitter-logo-silhouette"></i>
+                                    </div>
+                                </a>
+
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <div class="circle-border">
+                                        <i class="icon-instagram-symbol"></i>
+                                    </div>
+                                </a>
+
+                            </div> <!-- End Icon-wrap -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- End Row -->
+        </div> <!-- End Header-top -->
+
+        <!-- Start navigation -->
+        <nav id="menu" class="nav-line hidden-sm hidden-xs default">
+            <ul class="menu">
+                <li class="active"><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">about</a></li>
+                <li><a href="{% url "teams-stats" %}">Teams and stats</a></li>
+                <li><a href="{% url "gallery" %}">Photo/Video</a></li>
+                <li><a href="{% url "blog-posts" %}">News/Blog</a></li>
+                <li><a href="{% url "schedule" %}">SCHEDULE</a></li>
+                <li><a href="{% url "partners" %}">PARTNERS</a></li>
+                <li><a href="{% url "contacts" %}">Contacts</a></li>
+            </ul>
+        </nav> <!-- End Nav -->
+
+        <nav class="nav-line-hidden hidden-lg hidden-md ">
+            <ul class="menu">
+                <li class="active"><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">about</a></li>
+                <li><a href="{% url "teams-stats" %}">Teams and stats</a></li>
+                <li><a href="{% url "gallery" %}">Photo/Video</a></li>
+                <li><a href="{% url "blog-posts" %}">News/Blog</a></li>
+                <li><a href="{% url "schedule" %}">SCHEDULE</a></li>
+                <li><a href="{% url "partners" %}">PARTNERS</a></li>
+                <li><a href="{% url "contacts" %}">Contacts</a></li>
+            </ul>
+        </nav> <!-- End Nav -->
+
+    </div> <!-- End Container -->
+</header> <!-- End Header -->

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+{% include "blocks/head.html" %}
+
+<body class="Pages">
+<!-- preloader -->
+<div class="pl">
+    <div class="round1 anti"></div>
+    <div class="pl_r"></div>
+    <div class="pl_l"></div>
+</div>
+
+
+<div class="wrapper">
+
+    {% include "blocks/header.html" %}
+
+    <!-- Start Page-Content -->
+    <section id="page-content">
+
+        <!-- Start Breadcrumbs -->
+        <div class="breadcrumbs">
+            <ul class="breadcrumb t-center">
+                <li><a href="{% url "home" %}">home</a></li>
+                <li class="active">news & blog</li>
+            </ul>
+        </div> <!-- End Breadcrumbs -->
+
+        <div class="block-posts">
+            <div class="container">
+                <div class="row">
+
+                    <div class="text-wrap t-center">
+                        <h2><span class="orange-text">Blog </span>Posts</h2>
+                    </div>
+                    <!-- News list-->
+                    <div class="col-md-9">
+
+                        <div class="blog-post">
+                            <div class="post-image"><a href="{% url "blog-post" %}"><img
+                                    src="../media/img/blog/post-img1.jpg" alt="post"></a></div>
+
+                            <ul class="post-meta">
+                                <li class="post-date"><span>Jan 6 2017</span></li>
+                                <li class="post-author">by Paul Johnson</li>
+                                <li class="post-message"><i class="icon-interface"></i>3 Comments</li>
+                            </ul>
+
+                            <h3 class="post-title"><a href="{% url "blog-post" %}">Biggest Plays of the Week</a></h3>
+
+                            <div class="post-teaser">
+                                <p>In case you miss the links I send out on Twitter, Deadspin's sub-site Regressing is
+                                    running a series on the biggest plays of the week. I created a tool for them them
+                                    lists the biggest plays in terms of Win Probability Added (WPA).</p>
+                            </div>
+
+                            <a href="{% url "blog-post" %}" class="btn btn-link-w"><span>read more</span></a>
+                        </div> <!-- End Blog-post -->
+
+                        <div class="blog-post">
+                            <div class="post-image">
+                                <div class="post-video">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gl1n79s3vRw"
+                                            allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <ul class="post-meta meta-bottom">
+                                <li class="post-date date-bottom"><span>Jan 6 2017</span></li>
+                                <li class="post-author">by Paul Johnson</li>
+                                <li class="post-message"><i class="icon-interface"></i>3 Comments</li>
+                            </ul>
+
+                            <h3 class="post-title"><a href="{% url "blog-post" %}">Wildcard Weekend Reaction</a></h3>
+
+                            <div class="post-teaser">
+                                <p>Last week, the Denver Broncos sacked head coach, Mike Shanahan, after the club failed
+                                    to reach the play-offs following a poor run of form.</p>
+                            </div>
+
+                            <a href="{% url "blog-post" %}" class="btn btn-link-w"><span>read more</span></a>
+                        </div> <!-- End Blog-post -->
+
+                        <div class="blog-post no-post-img">
+                            <div class="post-image">
+                            </div>
+
+                            <ul class="post-meta meta-bottom">
+                                <li class="post-date date-bottom"><span>Jan 6 2017</span></li>
+                                <li class="post-author">by Paul Johnson</li>
+                                <li class="post-message"><i class="icon-interface"></i>3 Comments</li>
+                            </ul>
+
+                            <h3 class="post-title"><a href="{% url "blog-post" %}">Global Football Returns To The
+                                AFCA </a></h3>
+
+                            <div class="post-teaser">
+                                <p>For the 19th year in succession, Global Football will feature prominently and engage
+                                    with football coaches from around the world at the annual American Football Coaches
+                                    Association (AFCA) Convention.</p>
+                                <div class="inside">
+                                    <i class="icon-quotes"></i>
+                                    <p>The Gaylord Opryland Resort & Convention Center in Nashville, TN, hosts the 94th
+                                        annual AFCA showpiece event from January 8-11 and Global Football President
+                                        Patrick Steenberge will be available to meet coaches and visitors to the
+                                        Convention at Booth 304-306 in the exhibit hall.</p>
+                                    <p>Since 1996, only Global Football has consistently provided amateur football
+                                        players, coaches, families and fans the opportunity to travel and compete
+                                        internationally with people of differing cultures, producing games and tours in
+                                        25 countries on 6 continents. More than 350 teams and 15,000 curious travelers
+                                        have encountered a positive life-changing experience, while enjoying the
+                                        ultimate team-building opportunity.</p>
+                                </div>
+                            </div>
+
+                            <a href="{% url "blog-post" %}" class="btn btn-link-w"><span>read more</span></a>
+                        </div> <!-- End Blog-post -->
+
+                        <div class="blog-post">
+                            <div class="post-image">
+                                <div class="post-img-carousel-wrap owl-carousel owl-theme">
+                                    <div class="car-post-item">
+                                        <a href="{% url "blog-post" %}"><img
+                                                src="../media/img/blog/carousel-img-post1.jpg" alt="post"></a>
+                                    </div>
+                                    <div class="car-post-item">
+                                        <a href="{% url "blog-post" %}"><img
+                                                src="../media/img/blog/carousel-img-post2.jpg" alt="post"></a>
+                                    </div>
+                                    <div class="car-post-item">
+                                        <a href="{% url "blog-post" %}"><img src="../media/img/blog/post-img1.jpg"
+                                                                             alt="post"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="post-meta">
+                                <li class="post-date"><span>Jan 6 2017</span></li>
+                                <li class="post-author">by Paul Johnson</li>
+                                <li class="post-message"><i class="icon-interface"></i>3 Comments</li>
+                            </ul>
+
+                            <h3 class="post-title"><a href="{% url "blog-post" %}">International Pop Warner
+                                Celebration</a></h3>
+
+                            <div class="post-teaser">
+                                <p>In case you miss the links I send out on Twitter, Deadspin's sub-site Regressing is
+                                    running a series on the biggest plays of the week. I created a tool for them them
+                                    lists the biggest plays in terms of Win Probability Added (WPA).</p>
+                            </div>
+
+                            <a href="{% url "blog-post" %}" class="btn btn-link-w"><span>read more</span></a>
+                        </div> <!-- End Blog-post -->
+
+                        <div class="blog-post">
+                            <div class="post-image">
+                                <div class="post-music">
+                                    <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/295926514&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                                </div>
+                            </div>
+
+                            <ul class="post-meta">
+                                <li class="post-date"><span>Jan 6 2017</span></li>
+                                <li class="post-author">by Paul Johnson</li>
+                                <li class="post-message"><i class="icon-interface"></i>3 Comments</li>
+                            </ul>
+
+                            <h3 class="post-title"><a href="{% url "blog-post" %}">Great Moments In Global Football
+                                History</a></h3>
+
+                            <div class="post-teaser">
+                                <p>In case you miss the links I send out on Twitter, Deadspin's sub-site Regressing is
+                                    running a series on the biggest plays of the week. I created a tool for them them
+                                    lists the biggest plays in terms of Win Probability Added (WPA).</p>
+                            </div>
+
+                            <a href="{% url "blog-post" %}" class="btn btn-link-w"><span>read more</span></a>
+                        </div> <!-- End Blog-post -->
+
+                        <div class="blog-post pad-top">
+                            <div class="post-image"><a href="{% url "blog-post" %}"><img
+                                    src="../media/img/blog/carousel-img-post2.jpg" alt="post"></a></div>
+
+                            <ul class="post-meta">
+                                <li class="post-date"><span>Jan 6 2017</span></li>
+                                <li class="post-author">by Paul Johnson</li>
+                                <li class="post-message"><i class="icon-interface"></i>3 Comments</li>
+                            </ul>
+
+                            <h3 class="post-title"><a href="{% url "blog-post" %}">Preseason Training Begins – 8th Jan
+                                2017</a></h3>
+
+                            <div class="post-teaser">
+                                <p>In case you miss the links I send out on Twitter, Deadspin's sub-site Regressing is
+                                    running a series on the biggest plays of the week. I created a tool for them them
+                                    lists the biggest plays in terms of Win Probability Added (WPA).</p>
+                            </div>
+
+                            <a href="{% url "blog-post" %}" class="btn btn-link-w"><span>read more</span></a>
+                        </div> <!-- End Blog-post -->
+
+                        <div class="btns-page-posts-wrap">
+                            <a href="#" class="btn btn-link-w active"><span>1</span></a>
+                            <a href="#" class="btn btn-link-w"><span>2</span></a>
+                            <a href="#" class="btn btn-link-w"><span>3</span></a>
+                            <a href="#" class="btn btn-link-w"><span>..</span></a>
+
+                        </div>
+
+                    </div>
+                    <!--News list end -->
+
+                    <div class="col-md-3">
+                        <div class="side-block">
+                            <h3>Archive</h3>
+                            <div class="calendar">
+
+                                <div class="calendar__header">November 2017</div>
+                                <table class="t-center clearfix">
+                                    <tr class="orange-text">
+                                        <th>M</th>
+                                        <th>T</th>
+                                        <th>W</th>
+                                        <th>Th</th>
+                                        <th>F</th>
+                                        <th>S</th>
+                                        <th>S</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="selected">1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td>15</td>
+                                        <td>16</td>
+                                        <td>17</td>
+                                        <td>18</td>
+                                        <td>19</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>21</td>
+                                        <td>22</td>
+                                        <td>23</td>
+                                        <td>24</td>
+                                        <td>25</td>
+                                        <td>26</td>
+                                    </tr>
+                                    <tr>
+                                        <td>27</td>
+                                        <td>28</td>
+                                        <td>29</td>
+                                        <td>30</td>
+                                        <td>31</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="calendar__footer"><a href="#">« Sep</a></div>
+
+                            </div> <!-- End Calendar -->
+                        </div> <!-- End Side-Block -->
+
+                        <div class="side-block">
+                            <h3>Post Categories</h3>
+
+                            <ul class="category-list">
+                                <li><a href="#">Audios <span>(2)</span></a></li>
+                                <li><a href="#">Daily Inspiration <span>(7)</span></a></li>
+                                <li><a href="#">Freelance <span>(3)</span></a></li>
+                                <li><a href="#">Links <span>(1)</span></a></li>
+                                <li><a href="#">Mobile <span>(1)</span></a></li>
+                                <li><a href="#">Photography <span>(5)</span></a></li>
+                                <li><a href="#">Quotes <span>(1)</span></a></li>
+                                <li><a href="#">Resources <span>(3)</span></a></li>
+                                <li><a href="#">Status <span>(1)</span></a></li>
+                            </ul>
+
+                        </div> <!-- End Side-Block -->
+
+                        <div class="side-block">
+                            <h3>Popular Tags</h3>
+
+                            <ul class="tags-list">
+                                <li><a href="#">Football</a></li>
+                                <li><a href="#">Backfield</a></li>
+                                <li><a href="#">Schedule</a></li>
+                                <li><a href="#">Collegiate football </a></li>
+                                <li><a href="#">Scores</a></li>
+                                <li><a href="#">Player</a></li>
+                                <li><a href="#">Playoff</a></li>
+                                <li><a href="#">Roster</a></li>
+                                <li><a href="#">Preseason</a></li>
+                                <li><a href="#">Game</a></li>
+                            </ul>
+
+                        </div> <!-- End Side-Block -->
+
+                        <div class="side-block pad-minus">
+                            <h3>Featured Posts</h3>
+
+                            <div class="blog-post post-preview">
+                                <div class="post-image"><a href="{% url "blog-post" %}"><img
+                                        src="../media/img/blog/post-img1.jpg" alt="post"></a></div>
+
+                                <ul class="post-meta">
+                                    <li class="post-date"><span>Jan 6 2017</span></li>
+                                </ul>
+
+                                <h3 class="post-title"><a href="{% url "blog-post" %}">Biggest Plays of the Week</a>
+                                </h3>
+                            </div> <!-- End Blog-post -->
+
+                        </div> <!-- End Side-Block -->
+
+                        <div class="side-block pad-minus">
+                            <h3>Featured Posts</h3>
+
+                            <div class="blog-post post-preview">
+                                <div class="post-image"><a href="{% url "blog-post" %}"><img
+                                        src="../media/img/blog/carousel-img-post2.jpg" alt="post"></a></div>
+
+                                <ul class="post-meta">
+                                    <li class="post-date"><span>Jan 6 2017</span></li>
+                                </ul>
+
+                                <h3 class="post-title"><a href="{% url "blog-post" %}">Fast fantasy facts on the running
+                                    backs of 2016</a></h3>
+                            </div> <!-- End Blog-post -->
+
+                        </div> <!-- End Side-Block -->
+
+
+                    </div> <!-- End Col -->
+
+                </div> <!-- End Row -->
+            </div> <!-- End Container -->
+        </div> <!-- End Posts Block-->
+
+    </section> <!-- End Page-Content-->
+
+    <!-- Start Page-Footer -->
+    {% include "blocks/footer.html" %}
+
+</div> <!-- End Wrapper -->
+
+<div class="hidden"></div>
+
+{% include "blocks/js.html" %}
+
+</body>
+</html>
