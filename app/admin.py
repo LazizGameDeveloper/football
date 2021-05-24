@@ -6,10 +6,10 @@ from app.models import *
 class Admin(admin.ModelAdmin):
     list_display = [
         "title",
-        "image",
         "content",
         "date",
         "is_active",
+        "admin_image"
     ]
 
     list_per_page = 15

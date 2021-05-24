@@ -22,6 +22,19 @@ class News(models.Model):
     )
     is_active = models.BooleanField(verbose_name="Is active", default=False)
 
+    def admin_image(self):
+
+        if self.image:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                f'<a href="{self.image.url}" target="_blank"><img src="{self.image.url}" width="80" /></a>'
+            )
+        else:
+            return 'Not Image Found'
+
+    admin_image.short_description = 'Photo'
+    admin_image.allow_tags = True
+
     class Meta:
 
         verbose_name = "news"

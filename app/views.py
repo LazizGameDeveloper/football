@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from app.models import *
 
 
 def main_page(request):
-    return render(request, "index.html")
+    news_list = News.objects.filter(is_active=True)
+
+    return render(request, "index.html", {
+        "news_list": news_list,
+    })
 
 
 def about(request):

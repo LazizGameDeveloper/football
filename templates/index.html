@@ -542,27 +542,32 @@
                         <div class="col-md-12 padding-null">
                             <div class="carousel-wrap-news owl-carousel owl-theme">
 
-                                <div class="carousel-item-news news-animated1">
+                                {% for news in news_list %}
+                                    <div class="carousel-item-news news-animated1">
 
                                     <a href="{% url "blog-post" %}" class="link-news">
                                         <div class="car-img-wrap">
-                                            <img src="/media/img/news/news1.jpg" alt="icon-news">
+                                            <img src="{{ news.image.url }}" alt="{{ news.title }}">
                                         </div>
 
                                         <div class="car-date-wrap">
                                             <div class="car-date-content">
-                                                <p>Jan 6 <br> 2017</p>
+                                                <p>{{ news.date.month }} {{ news.date.day }} <br> {{ news.date.year }}</p>
                                             </div>
                                         </div>
 
                                         <div class="car-text-wrap">
                                             <p>
-                                                Compensatory Pick Projection For The Dolphins
+                                                Short description
                                             </p>
                                         </div>
                                     </a>
 
                                 </div> <!--End carousel-item-coaches -->
+                                {% endfor %}
+
+
+
 
                                 <div class="carousel-item-news news-animated2">
 
