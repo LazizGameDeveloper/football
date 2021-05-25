@@ -2,19 +2,14 @@ from django.db import models
 
 
 class News(models.Model):
-    # title (1:1)
-    # preview
-    # content
-    # short description
-    # date time
-
     title = models.CharField(verbose_name="Title", max_length=70, default="")
     image = models.ImageField(
         verbose_name="Image 1x1",
-        upload_to="media/img/news/",
+        upload_to="img/news/",
         default="",
     )
-    content = models.TextField(verbose_name="Content")
+    content = models.TextField(verbose_name="Content", default="")
+    short_description = models.TextField(verbose_name="Short_description", max_length=70, blank=True, default="")
     date = models.DateTimeField(
         verbose_name="Creation date",
         editable=False,
@@ -44,16 +39,10 @@ class News(models.Model):
 
 
 class Blog(models.Model):
-    # title (2:1)
-    # preview
-    # content
-    # short description
-    # date time
-
     title = models.CharField(verbose_name="Title", max_length=120, default="")
     image = models.ImageField(
         verbose_name="Image 2x1",
-        upload_to="media/img/blog/",
+        upload_to="img/blog/",
         default="",
         blank=True
     )
@@ -81,12 +70,9 @@ class Merch(models.Model):
 
 
 class GalleryPhoto(models.Model):
-    # img (640x500)
-    # short description
-    # date
     image = models.ImageField(
         verbose_name="Photo 640x500",
-        upload_to="media/img/clubGallery/",
+        upload_to="img/clubGallery/",
         default=""
     )
     description = models.CharField(
@@ -110,12 +96,9 @@ class GalleryPhoto(models.Model):
 
 
 class GalleryVideo(models.Model):
-    # file
-    # short description
-    # date
     video = models.FileField(
         verbose_name="Video",
-        upload_to="media/video/clubGallery",
+        upload_to="video/clubGallery",
         default=""
     )
     description = models.CharField(verbose_name="Short description", max_length=70, default="")
@@ -134,13 +117,9 @@ class GalleryVideo(models.Model):
 
 
 class Coach(models.Model):
-    # img (1:1)
-    # name
-    # occupation
-    # achievements
     image = models.ImageField(
         verbose_name="Photo 1x1",
-        upload_to="media/img/coaches/",
+        upload_to="img/coaches/",
         default=""
     )
     name = models.CharField(verbose_name="Name", max_length=30, default="")
@@ -159,15 +138,11 @@ class Coach(models.Model):
 
 
 class MainSlides(models.Model):
-    # title
-    # description
-    # image
-
     title = models.CharField(verbose_name="Title", max_length=30, default="")
     description = models.CharField(verbose_name="Short description", max_length=50, default="")
     image = models.ImageField(
         verbose_name="Slide image",
-        upload_to="media/img/slides/",
+        upload_to="img/slides/",
         default="",
     )
     is_active = models.BooleanField(verbose_name="Is active", default=False)
@@ -180,12 +155,10 @@ class MainSlides(models.Model):
 
 
 class Partners(models.Model):
-    # name
-    # logo (160:65)
     name = models.CharField(verbose_name="Partner name", max_length=50, default="")
     image = models.ImageField(
         verbose_name="Logo",
-        upload_to="media/img/partners/",
+        upload_to="img/partners/",
         default="",
     )
     is_active = models.BooleanField(verbose_name="Is active", default=False)
@@ -198,9 +171,6 @@ class Partners(models.Model):
 
 
 class TeamMembers(models.Model):
-    # name
-    # photo (is not necessary)
-    # rank
     name = models.CharField(verbose_name="Name", max_length=30, default="")
     last_name = models.CharField(verbose_name="Last name", max_length=30, default="")
     rank = models.CharField(verbose_name="Rank", max_length=50, default="")

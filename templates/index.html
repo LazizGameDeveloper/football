@@ -545,25 +545,24 @@
                                 {% for news in news_list %}
                                     <div class="carousel-item-news news-animated1">
 
-                                    <a href="{% url "blog-post" %}" class="link-news">
-                                        <div class="car-img-wrap">
-                                            <img src="{{ news.image.url }}" alt="{{ news.title }}">
-                                        </div>
-
-                                        <div class="car-date-wrap">
-                                            <div class="car-date-content">
-                                                <p>{{ news.date.month }} {{ news.date.day }} <br> {{ news.date.year }}</p>
+                                        <a href="{% url "blog-post" %}" class="link-news">
+                                            <div class="car-img-wrap">
+                                                <img src="{{ news.image.url }}" alt="{{ news.title }}">
                                             </div>
-                                        </div>
 
-                                        <div class="car-text-wrap">
-                                            <p>
-                                                Short description
-                                            </p>
-                                        </div>
-                                    </a>
+                                            <div class="car-date-wrap">
+                                                <div class="car-date-content">
+                                                    <p> {{ news.date.date }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="car-text-wrap">
+                                                <p>
+                                                    {{ news.short_description }}
+                                                </p>
+                                            </div>
+                                        </a>
 
-                                </div> <!--End carousel-item-coaches -->
+                                    </div> <!--End carousel-item-coaches -->
                                 {% endfor %}
 
 

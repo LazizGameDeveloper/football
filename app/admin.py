@@ -7,6 +7,7 @@ class Admin(admin.ModelAdmin):
     list_display = [
         "title",
         "content",
+        "short_description",
         "date",
         "is_active",
         "admin_image"
