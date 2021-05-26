@@ -455,18 +455,17 @@
 
                         <div class="col-md-12">
                             <div class="carousel-wrap-coaches owl-carousel owl-theme">
-
-                                <div class="carousel-item-coaches coaches-animated1">
+                                {% for coach in coaches %}
+                                    <div class="carousel-item-coaches coaches-animated1">
 
                                     <div class="car-img-wrap">
-                                        <img src="/media/img/coaches/coaches1.png" alt="icon-coaches">
+                                        <img src="{{ coach.image.url }}" alt="icon-coaches">
                                     </div>
 
                                     <div class="car-text-wrap">
-                                        <h4>Sammy McDonnell</h4>
-                                        <h5 class="orange-text">Coach & Offensive Coordinator</h5>
-                                        <p>The 2017 season will be Sammy' first season with us. He has been coaching for
-                                            over 20 years.</p>
+                                        <h4>{{ coach.name }} {{ coach.last_name }}</h4>
+                                        <h5 class="orange-text">{{ coach.occupation }}</h5>
+                                        <p>{{ coach.achievements }}</p>
                                     </div>
 
                                     <div class="car-btn-wrap">
@@ -476,48 +475,7 @@
                                     </div>
 
                                 </div> <!--End carousel-item-coaches -->
-
-                                <div class="carousel-item-coaches coaches-animated2">
-
-                                    <div class="car-img-wrap">
-                                        <img src="/media/img/coaches/coaches2.png" alt="icon-coaches">
-                                    </div>
-
-                                    <div class="car-text-wrap">
-                                        <h4>James Frazier</h4>
-                                        <h5 class="orange-text">Defensive Coordinator</h5>
-                                        <p>James has been with us for a number of years, but this season sees his return
-                                            to kitted coaching.</p>
-                                    </div>
-
-                                    <div class="car-btn-wrap">
-                                        <a href="{% url "teams-stats" %}" class="btn btn-link-o">
-                                            <span>know more</span>
-                                        </a>
-                                    </div>
-
-                                </div> <!--End carousel-item-coaches -->
-
-                                <div class="carousel-item-coaches coaches-animated3">
-
-                                    <div class="car-img-wrap">
-                                        <img src="/media/img/coaches/coaches3.png" alt="icon-coaches">
-                                    </div>
-
-                                    <div class="car-text-wrap">
-                                        <h4>Elmer Ferguson</h4>
-                                        <h5 class="orange-text">Special Teams Coordinator</h5>
-                                        <p>Having previously played a variety of positions, Coach Elmer a niche in
-                                            Special Teams. Lorem dolor sit amet.</p>
-                                    </div>
-
-                                    <div class="car-btn-wrap">
-                                        <a href="{% url "teams-stats" %}" class="btn btn-link-o">
-                                            <span>know more</span>
-                                        </a>
-                                    </div>
-
-                                </div> <!--End carousel-item-coaches -->
+                                {% endfor %}
 
                             </div> <!-- End carousel-wrap-coaches -->
                         </div> <!-- End col-md-12 -->
@@ -557,7 +515,7 @@
                                             </div>
                                             <div class="car-text-wrap">
                                                 <p>
-                                                    {{ news.short_description }}
+                                                    {{ news.title }}
                                                 </p>
                                             </div>
                                         </a>
@@ -653,85 +611,23 @@
 
                         <div class="col-md-12 gallery-m">
                             <div id="gallery" class="gallery gallery-isotope clearfix">
+                                {% for gallery_photo in gallery_photos %}
+                                    <div class="gallery__item category1">
+                                    <div class="gallery__item__img">
+                                        <img src="{{ gallery_photo.image.url }}" alt="gc">
+                                        <a class="hover-link-g mfp-gallery"
+                                           href="{{ gallery_photo.image.url }}">
+                                            <div class="inside">
+                                                <i class="icon-cross"></i>
+                                                <p>{{ gallery_photo.title }}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {% endfor %}
 
-                                <div class="gallery__item category1">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery1.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery1.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category2">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery2.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery2.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category1">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery3.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery3.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category3">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery4.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery4.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category1">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery5.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery5.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category4">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery6.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery6.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+
+
 
                             </div> <!-- End gallery-isotope -->
                         </div> <!-- End block gallery-m -->

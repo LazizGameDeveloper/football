@@ -9,7 +9,6 @@ class News(models.Model):
         default="",
     )
     content = models.TextField(verbose_name="Content", default="")
-    short_description = models.TextField(verbose_name="Short_description", max_length=70, blank=True, default="")
     date = models.DateTimeField(
         verbose_name="Creation date",
         editable=False,
@@ -26,6 +25,15 @@ class News(models.Model):
             )
         else:
             return 'Not Image Found'
+
+    # Чтобы сократить выводимый текст в админке
+    def admin_content(self):
+        sh_description = self.content[:200]
+        # убираем последнее слово т.к. оно может мы разрезанным
+        return f"{sh_description.rsplit(' ', 1)[0]}"
+
+    admin_content.short_description = "Desc"
+    admin_content.allow_tags = True
 
     admin_image.short_description = 'Photo'
     admin_image.allow_tags = True
@@ -75,8 +83,8 @@ class GalleryPhoto(models.Model):
         upload_to="img/clubGallery/",
         default=""
     )
-    description = models.CharField(
-        verbose_name="Short description",
+    title = models.CharField(
+        verbose_name="Title",
         max_length=70,
         default="",
         blank=True
@@ -87,6 +95,19 @@ class GalleryPhoto(models.Model):
         auto_now_add=True,
     )
     is_active = models.BooleanField(verbose_name="Is active", default=False)
+
+    def admin_image(self):
+
+        if self.image:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                f'<a href="{self.image.url}" target="_blank"><img src="{self.image.url}" width="100" /></a>'
+            )
+        else:
+            return 'Not Image Found'
+
+    admin_image.short_description = 'Photo'
+    admin_image.allow_tags = True
 
     class Meta:
         verbose_name = "photo"
@@ -130,6 +151,19 @@ class Coach(models.Model):
     achievements = models.CharField(verbose_name="Achieves", max_length=225, default="")
     is_active = models.BooleanField(verbose_name="Is active", default=False)
 
+    def admin_image(self):
+
+        if self.image:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                f'<a href="{self.image.url}" target="_blank"><img src="{self.image.url}" width="100" /></a>'
+            )
+        else:
+            return 'Not Image Found'
+
+    admin_image.short_description = 'Photo'
+    admin_image.allow_tags = True
+
     class Meta:
         verbose_name = "coach"
         verbose_name_plural = "coaches"
@@ -147,6 +181,19 @@ class MainSlides(models.Model):
     )
     is_active = models.BooleanField(verbose_name="Is active", default=False)
 
+    def admin_image(self):
+
+        if self.image:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                f'<a href="{self.image.url}" target="_blank"><img src="{self.image.url}" width="200" /></a>'
+            )
+        else:
+            return 'Not Image Found'
+
+    admin_image.short_description = 'Photo'
+    admin_image.allow_tags = True
+
     class Meta:
         verbose_name = "slide"
         verbose_name_plural = "main menu slides"
@@ -162,6 +209,19 @@ class Partners(models.Model):
         default="",
     )
     is_active = models.BooleanField(verbose_name="Is active", default=False)
+
+    def admin_image(self):
+
+        if self.image:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                f'<a href="{self.image.url}" target="_blank"><img src="{self.image.url}" width="80" /></a>'
+            )
+        else:
+            return 'Not Image Found'
+
+    admin_image.short_description = 'Photo'
+    admin_image.allow_tags = True
 
     class Meta:
         verbose_name = "partner"

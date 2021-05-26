@@ -6,10 +6,9 @@ from app.models import *
 class Admin(admin.ModelAdmin):
     list_display = [
         "title",
-        "content",
-        "short_description",
         "date",
         "is_active",
+        "admin_content",
         "admin_image"
     ]
 
@@ -32,10 +31,10 @@ class AdminBlog(admin.ModelAdmin):
 @admin.register(GalleryPhoto)
 class AdminGalleryPhoto(admin.ModelAdmin):
     list_display = [
-        "image",
-        "description",
+        "title",
         "date",
         "is_active",
+        "admin_image",
     ]
 
     list_per_page = 15
@@ -56,12 +55,12 @@ class AdminGalleryVideo(admin.ModelAdmin):
 @admin.register(Coach)
 class AdminCoach(admin.ModelAdmin):
     list_display = [
-        "image",
         "name",
         "last_name",
         "occupation",
         "achievements",
-        "is_active"
+        "is_active",
+        "admin_image",
     ]
 
     list_per_page = 15
@@ -72,7 +71,7 @@ class AdminMainSlides(admin.ModelAdmin):
     list_display = [
         "title",
         "description",
-        "image",
+        "admin_image",
         "is_active",
     ]
 
@@ -83,7 +82,7 @@ class AdminMainSlides(admin.ModelAdmin):
 class AdminPartners(admin.ModelAdmin):
     list_display = [
         "name",
-        "image",
+        "admin_image",
         "is_active",
     ]
 
