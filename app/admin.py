@@ -95,6 +95,19 @@ class AdminTeamMembers(admin.ModelAdmin):
         "name",
         "last_name",
         "rank",
+        "admin_biography",
+        "is_active",
+    ]
+
+    list_per_page = 15
+
+
+@admin.register(Committee)
+class AdminCommittee(admin.ModelAdmin):
+    list_display = [
+        "name",
+        "last_name",
+        "occupation",
         "is_active",
     ]
 

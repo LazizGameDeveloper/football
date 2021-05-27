@@ -4,21 +4,34 @@ from app.models import *
 
 def main_page(request):
     news_list = News.objects.filter(is_active=True)
-    coaches = Coach.objects.filter(is_active=True)
     gallery_photos = GalleryPhoto.objects.filter(is_active=True)[:6]
+    coaches = Coach.objects.filter(is_active=True)
 
     for coach in coaches:
         coach.achievements = cut(coach.achievements, 90)
 
+    partners_list = Partners.objects.filter(is_active=True)
+
     return render(request, "index.html", {
         "news_list": news_list,
         "gallery_photos": gallery_photos,
-        "coaches": coaches
+        "coaches": coaches,
+        "partners": partners_list,
     })
 
 
 def about(request):
-    return render(request, "about.html")
+    team_members = TeamMembers.objects.filter(is_active=True)
+    for member in team_members:
+        member.biography = member.biography.split(".", 1)[0] + "."
+        member.biography = cut(member.biography, 250)
+
+    committee_list = Committee.objects.filter(is_active=True)
+
+    return render(request, "about.html", {
+        "team_members": team_members,
+        "committee_list": committee_list,
+    })
 
 
 def teams_and_stats(request):
@@ -57,4 +70,5 @@ def cut(variable, length):
         variable = variable[:-1]
 
     variable += "..."
+
     return variable

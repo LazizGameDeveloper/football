@@ -28,9 +28,9 @@ class News(models.Model):
 
     # Чтобы сократить выводимый текст в админке
     def admin_content(self):
-        sh_description = self.content[:200]
+        short_description = self.content[:200]
         # убираем последнее слово т.к. оно может мы разрезанным
-        return f"{sh_description.rsplit(' ', 1)[0]}"
+        return f"{short_description.rsplit(' ', 1)[0]}"
 
     admin_content.short_description = "Desc"
     admin_content.allow_tags = True
@@ -234,10 +234,32 @@ class TeamMembers(models.Model):
     name = models.CharField(verbose_name="Name", max_length=30, default="")
     last_name = models.CharField(verbose_name="Last name", max_length=30, default="")
     rank = models.CharField(verbose_name="Rank", max_length=50, default="")
+    biography = models.TextField(verbose_name="Biography", default="")
     is_active = models.BooleanField(verbose_name="Is active", default=False)
+
+    def admin_biography(self):
+        short_description = self.biography[:200]
+        # убираем последнее слово т.к. оно может мы разрезанным
+        return f"{short_description.rsplit(' ', 1)[0]}"
+
+    admin_biography.short_description = "Desc"
+    admin_biography.allow_tags = True
 
     class Meta:
         verbose_name = "member"
         verbose_name_plural = "team members"
 
         ordering = ["name", "is_active"]
+
+
+class Committee(models.Model):
+    name = models.CharField(verbose_name="Name", max_length=40, default="")
+    last_name = models.CharField(verbose_name="Last_name", max_length=40, default="")
+    occupation = models.CharField(verbose_name="Occupation", max_length=50, default="")
+    is_active = models.BooleanField(verbose_name="Is active", default=False)
+
+    class Meta:
+        verbose_name = "Member"
+        verbose_name_plural = "Committee"
+
+        ordering = ["name", "last_name"]

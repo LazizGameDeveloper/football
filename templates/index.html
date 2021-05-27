@@ -660,42 +660,13 @@
 
                         <div class="col-md-12">
                             <div class="carousel-wrap-partners owl-carousel owl-theme">
-
-                                <div class="carousel-item-partners">
+                                {% for partner in partners %}
+                                    <div class="carousel-item-partners">
                                     <a href="{% url "partners" %}" class="link-partners" target="_blank">
-                                        <img src="/media/img/partners/partners1.png" alt="partners">
+                                        <img src="{{ partner.image.url }}" alt="partners">
                                     </a>
                                 </div> <!--End carousel-item-partners -->
-
-                                <div class="carousel-item-partners">
-                                    <a href="{% url "partners" %}" class="link-partners" target="_blank">
-                                        <img class="min-img1" src="/media/img/partners/partners5.png" alt="partners">
-                                    </a>
-                                </div> <!--End carousel-item-partners -->
-
-                                <div class="carousel-item-partners">
-                                    <a href="{% url "partners" %}" class="link-partners" target="_blank">
-                                        <img src="/media/img/partners/partners3.png" alt="partners">
-                                    </a>
-                                </div> <!--End carousel-item-partners -->
-
-                                <div class="carousel-item-partners">
-                                    <a href="{% url "partners" %}" class="link-partners" target="_blank">
-                                        <img class="min-img2" src="/media/img/partners/partners4.png" alt="partners">
-                                    </a>
-                                </div> <!--End carousel-item-partners -->
-
-                                <div class="carousel-item-partners">
-                                    <a href="{% url "partners" %}" class="link-partners" target="_blank">
-                                        <img src="/media/img/partners/partners2.png" alt="partners">
-                                    </a>
-                                </div> <!--End carousel-item-partners -->
-
-                                <div class="carousel-item-partners">
-                                    <a href="{% url "partners" %}" class="link-partners" target="_blank">
-                                        <img src="/media/img/partners/partners6.png" alt="partners">
-                                    </a>
-                                </div> <!--End carousel-item-partners -->
+                                {% endfor %}
 
                             </div> <!-- End carousel-wrap-partners -->
                         </div> <!-- End col-md-12 -->

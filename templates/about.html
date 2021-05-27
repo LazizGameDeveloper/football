@@ -54,42 +54,19 @@
             <div class="container-fluid padding-null">
 
                 <div class="carousel-wrap-about-players owl-carousel owl-theme">
+                    {% for member in team_members %}
+                        <div class="carousel-item-about-players car-item-bg1">
+                            <div class="car-content">
+                                <h4>{{ member.rank }} </h4>
+                                <h2><span class="orange-text">{{ member.name }} {{ member.last_name }}</span></h2>
+                                <p>{{ member.biography}}</p>
+                                <a href="#" class="btn btn-link-o">
+                                    <span>Подробнее</span>
+                                </a>
+                            </div>
+                        </div> <!-- End Carousel-item-about-players-->
+                    {% endfor %}
 
-                    <div class="carousel-item-about-players car-item-bg1">
-                        <div class="car-content">
-                            <h4>The Greats</h4>
-                            <h2><span class="orange-text">Adam Smith</span></h2>
-                            <p>He was drafted by the Atlanta Falcons in the 1991 NFL Draft. He was with them for only
-                                one season before being traded off to the Green Bay Packers in 1992.</p>
-                            <a href="#" class="btn btn-link-o">
-                                <span>read more</span>
-                            </a>
-                        </div>
-                    </div> <!-- End Carousel-item-about-players-->
-
-                    <div class="carousel-item-about-players car-item-bg2">
-                        <div class="car-content">
-                            <h4>The Greats</h4>
-                            <h2><span class="orange-text">Max Grog</span></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium magnam non delectus
-                                nulla quos tempora iure inventore sed itaque saepe!</p>
-                            <a href="#" class="btn btn-link-o">
-                                <span>read more</span>
-                            </a>
-                        </div>
-                    </div> <!-- End Carousel-item-about-players-->
-
-                    <div class="carousel-item-about-players car-item-bg3">
-                        <div class="car-content">
-                            <h4>The Greats</h4>
-                            <h2><span class="orange-text">Antony Simons</span></h2>
-                            <p>Praesentium magnam non delectus nulla quos tempora iure inventore sed itaque saepe! He
-                                was with them for only to the Green Bay Packers in 1992.</p>
-                            <a href="#" class="btn btn-link-o">
-                                <span>read more</span>
-                            </a>
-                        </div>
-                    </div> <!-- End Carousel-item-about-players-->
                 </div> <!-- End carousel-wrap-about-players -->
 
                 <div class="carousel-wrap-about-sections owl-carousel owl-theme">
@@ -151,38 +128,15 @@
 
                     <div class="col-lg-6">
                         <div class="infoCommittee-wrap">
-                            <h2><span class="orange-text">Committee</span></h2>
+                            <h2><span class="orange-text">Комитет</span></h2>
 
                             <div class="inner-text">
-                                <div class="line-block">
-                                    <p>President</p>
-                                    <p>Reinaldo Rivas</p>
+                                {% for committee in committee_list %}
+                                    <div class="line-block">
+                                    <p>{{ committee.occupation }}</p>
+                                    <p>{{ committee.name }} {{ committee.last_name }}</p>
                                 </div>
-                                <div class="line-block">
-                                    <p>Vice-President</p>
-                                    <p>Joe Rice</p>
-                                </div>
-                                <div class="line-block">
-                                    <p>Treasurer</p>
-                                    <p>Luis Griffith</p>
-                                </div>
-                                <div class="line-block">
-                                    <p>Social Secretaries</p>
-                                    <p>Thomas Roy and Scott Ellis</p>
-                                </div>
-                                <div class="line-block">
-                                    <p>Equipment Manager</p>
-                                    <p>William Gregg</p>
-                                </div>
-                                <div class="line-block">
-                                    <p>Development Team</p>
-                                    <p>Donald Davis, Paul Bristow
-                                        and Aaron Watson</p>
-                                </div>
-                                <div class="line-block">
-                                    <p>Fitness & Nutrition Secretary</p>
-                                    <p>Kenneth Lauterbach</p>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div><!-- End infoCommittee-wrap -->
                     </div>
