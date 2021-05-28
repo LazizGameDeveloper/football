@@ -171,7 +171,7 @@ class Coach(models.Model):
         ordering = ["name", "is_active"]
 
 
-class MainSlides(models.Model):
+class MainSlide(models.Model):
     title = models.CharField(verbose_name="Title", max_length=30, default="")
     description = models.CharField(verbose_name="Short description", max_length=50, default="")
     image = models.ImageField(
@@ -201,13 +201,14 @@ class MainSlides(models.Model):
         ordering = ["title", "is_active"]
 
 
-class Partners(models.Model):
+class Partner(models.Model):
     name = models.CharField(verbose_name="Partner name", max_length=50, default="")
     image = models.ImageField(
         verbose_name="Logo",
         upload_to="img/partners/",
         default="",
     )
+    history = models.TextField(verbose_name="History", default="")
     is_active = models.BooleanField(verbose_name="Is active", default=False)
 
     def admin_image(self):

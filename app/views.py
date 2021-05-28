@@ -3,6 +3,7 @@ from app.models import *
 
 
 def main_page(request):
+    slides = MainSlide.objects.filter(is_active=True)
     news_list = News.objects.filter(is_active=True)
     gallery_photos = GalleryPhoto.objects.filter(is_active=True)[:6]
     coaches = Coach.objects.filter(is_active=True)
@@ -10,13 +11,14 @@ def main_page(request):
     for coach in coaches:
         coach.achievements = cut(coach.achievements, 90)
 
-    partners_list = Partners.objects.filter(is_active=True)
+    partners_list = Partner.objects.filter(is_active=True)
 
     return render(request, "index.html", {
         "news_list": news_list,
         "gallery_photos": gallery_photos,
         "coaches": coaches,
         "partners": partners_list,
+        "slides": slides,
     })
 
 
@@ -35,11 +37,21 @@ def about(request):
 
 
 def teams_and_stats(request):
-    return render(request, "teams-stats.html")
+    coaches = Coach.objects.filter(is_active=True)
+    for coach in coaches:
+        coach.achievements = cut(coach.achievements, 90)
+
+    return render(request, "teams-stats.html", {
+        "coaches": coaches,
+    })
 
 
 def gallery(request):
-    return render(request, "gallery.html")
+    gallery_photos = GalleryPhoto.objects.filter(is_active=True)
+
+    return render(request, "gallery.html", {
+        "gallery_photos": gallery_photos,
+    })
 
 
 def news_and_blog(request):
@@ -51,7 +63,13 @@ def schedule(request):
 
 
 def partners(request):
-    return render(request, "partners.html")
+    general_partners = Partner.objects.filter(is_active=True)[:3]
+    all_partners = Partner.objects.filter(is_active=True)
+
+    return render(request, "partners.html", {
+        "general_partners": general_partners,
+        "all_partners": all_partners,
+    })
 
 
 def contacts(request):
