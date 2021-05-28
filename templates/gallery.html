@@ -1,6 +1,21 @@
-{% extends "app/inner/inner.html" %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 
-{% block content %}
+{% include "blocks/head.html" %}
+
+<body class="Pages gallery-W">
+<!-- preloader -->
+<div class="pl">
+    <div class="round1 anti"></div>
+    <div class="pl_r"></div>
+    <div class="pl_l"></div>
+</div>
+
+
+<div class="wrapper">
+
+    {% include "blocks/header.html" %}
+
     <!-- Start Page-Content -->
     <section id="page-content">
 
@@ -30,13 +45,13 @@
                                 <ul class="option-set" data-option-key="filter">
                                     <li><a class="btn btn-link-g selected" href="#filter" data-option-value="*"><span>All Photos</span></a>
                                     </li>
-                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category1"><span>2014 Gallery</span></a>
+                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category1"><span>2018 Gallery</span></a>
                                     </li>
-                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category2"><span>2015 Gallery</span></a>
+                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category2"><span>2019 Gallery</span></a>
                                     </li>
-                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category3"><span>2016 Gallery</span></a>
+                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category3"><span>2020 Gallery</span></a>
                                     </li>
-                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category4"><span>2017 Gallery</span></a>
+                                    <li><a class="btn btn-link-g" href="#filter" data-option-value=".category4"><span>2021 Gallery</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -45,125 +60,62 @@
                         <div class="col-md-12 gallery-m">
                             <div id="gallery" class="gallery gallery-isotope clearfix">
 
-                                <div class="gallery__item category1">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery1.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery1.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
+                                {% for gallery_photo in gallery_photos %}
+                                    {% if gallery_photo.date.year == 2018 %}
+                                        <div class="gallery__item category1">
+                                            <div class="gallery__item__img">
+                                                <img src="{{ gallery_photo.image.url }}" alt="gc">
+                                                <a class="hover-link-g mfp-gallery"
+                                                   href="{{ gallery_photo.image.url }}">
+                                                    <div class="inside">
+                                                        <i class="icon-cross"></i>
+                                                        <p>{{ gallery_photo.title }}</p>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category2">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery2.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery2.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
+                                        </div>
+                                    {% elif gallery_photo.date.year == 2019 %}
+                                        <div class="gallery__item category2">
+                                            <div class="gallery__item__img">
+                                                <img src="{{ gallery_photo.image.url }}" alt="gc">
+                                                <a class="hover-link-g mfp-gallery"
+                                                   href="{{ gallery_photo.image.url }}">
+                                                    <div class="inside">
+                                                        <i class="icon-cross"></i>
+                                                        <p>{{ gallery_photo.title }}</p>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category1">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery3.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery3.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
+                                        </div>
+                                    {% elif gallery_photo.date.year == 2020 %}
+                                        <div class="gallery__item category3">
+                                            <div class="gallery__item__img">
+                                                <img src="{{ gallery_photo.image.url }}" alt="gc">
+                                                <a class="hover-link-g mfp-gallery"
+                                                   href="{{ gallery_photo.image.url }}">
+                                                    <div class="inside">
+                                                        <i class="icon-cross"></i>
+                                                        <p>{{ gallery_photo.title }}</p>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category3">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery4.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery4.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
+                                        </div>
+                                    {% elif gallery_photo.date.year == 2021 %}
+                                        <div class="gallery__item category4">
+                                            <div class="gallery__item__img">
+                                                <img src="{{ gallery_photo.image.url }}" alt="gc">
+                                                <a class="hover-link-g mfp-gallery"
+                                                   href="{{ gallery_photo.image.url }}">
+                                                    <div class="inside">
+                                                        <i class="icon-cross"></i>
+                                                        <p>{{ gallery_photo.title }}</p>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category1">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery5.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery5.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category4">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery6.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery6.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category2">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery7.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery7.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category3">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery8.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery8.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="gallery__item category1">
-                                    <div class="gallery__item__img">
-                                        <img src="/media/img/clubGallery/clubGallery9.jpg" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="/media/img/clubGallery/clubGallery9.jpg">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>We have a senior mens club entered into in the Senior competition of
-                                                    the competition.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                        </div>
+                                    {% endif %}
 
-
+                                {% endfor %}
                             </div> <!-- End gallery-isotope -->
                         </div> <!-- End block gallery-m -->
 
@@ -181,6 +133,14 @@
         </div> <!-- End Club-Gallery Block -->
 
     </section> <!-- End Page-Content-->
-{% endblock %}
 
+    {% include "blocks/footer.html" %}
 
+</div> <!-- End Wrapper -->
+
+<div class="hidden"></div>
+
+{% include "blocks/js.html" %}
+
+</body>
+</html>
