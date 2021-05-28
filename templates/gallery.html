@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
+{% extends "app/inner/inner.html" %}
 
-{% include "blocks/head.html" %}
-
-<body class="Pages gallery-W">
-<!-- preloader -->
-<div class="pl">
-    <div class="round1 anti"></div>
-    <div class="pl_r"></div>
-    <div class="pl_l"></div>
-</div>
-
-
-<div class="wrapper">
-
-    {% include "blocks/header.html" %}
-
+{% block content %}
     <!-- Start Page-Content -->
     <section id="page-content">
 
@@ -196,14 +181,6 @@
         </div> <!-- End Club-Gallery Block -->
 
     </section> <!-- End Page-Content-->
+{% endblock %}
 
-    {% include "blocks/footer.html" %}
 
-</div> <!-- End Wrapper -->
-
-<div class="hidden"></div>
-
-{% include "blocks/js.html" %}
-
-</body>
-</html>
