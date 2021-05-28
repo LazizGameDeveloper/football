@@ -100,66 +100,27 @@
     <!-- Carousel -->
     <section id="mainCarouselWrapper">
         <div id="mainCarousel" class="t-white carousel-eq owl-carousel owl-theme">
+            {% for slide in slides %}
+                <div class="carousel-item">
 
-            <div class="carousel-item">
+                    <div class="img-holder1" style="background: url({{ slide.image.url }}); width: 100%"></div>
 
-                <div class="img-holder1"></div>
-
-                <div class="carousel-content center">
-                    <div class="text-wrap text-ani1">
-                        <div class="text">
-                            <h2>Look Up, Get Up <br> But Never Give Up</h2>
-                            <p>Demand respect or expect defeat</p>
+                    <div class="carousel-content center">
+                        <div class="text-wrap text-ani1">
+                            <div class="text">
+                                <h2>{{ slide.title }}</h2>
+                                <p>{{ slide.description}}</p>
+                            </div>
+                        </div>
+                        <div class="btn-wrap">
+                            <a href="{% url "about" %}" class="btn btn-link-o">
+                                <span>read more</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="btn-wrap">
-                        <a href="{% url "about" %}" class="btn btn-link-o">
-                            <span>read more</span>
-                        </a>
-                    </div>
-                </div>
 
-            </div>  <!-- End carousel-item -->
-
-            <div class="carousel-item">
-
-                <div class="img-holder2"></div>
-
-                <div class="carousel-content center">
-                    <div class="text-wrap text-ani2">
-                        <div class="text">
-                            <h2>Hustle and Heart <br> Set Us Apart</h2>
-                            <p>Championships are made when the stands are empty</p>
-                        </div>
-                    </div>
-                    <div class="btn-wrap">
-                        <a href="{% url "about" %}" class="btn btn-link-o">
-                            <span>read more</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>  <!-- End carousel-item -->
-
-            <div class="carousel-item">
-
-                <div class="img-holder3"></div>
-
-                <div class="carousel-content center">
-                    <div class="text-wrap text-ani3">
-                        <div class="text">
-                            <h2>Practice Winning <br> Every Day</h2>
-                            <p>A team above all. Above all a team</p>
-                        </div>
-                    </div>
-                    <div class="btn-wrap">
-                        <a href="{% url "about" %}" class="btn btn-link-o">
-                            <span>read more</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>  <!-- End carousel-item -->
+                </div>  <!-- End carousel-item -->
+            {% endfor %}
 
         </div> <!-- End mainCarousel -->
     </section> <!-- End CarouselWrapper -->
@@ -458,23 +419,23 @@
                                 {% for coach in coaches %}
                                     <div class="carousel-item-coaches coaches-animated1">
 
-                                    <div class="car-img-wrap">
-                                        <img src="{{ coach.image.url }}" alt="icon-coaches">
-                                    </div>
+                                        <div class="car-img-wrap">
+                                            <img src="{{ coach.image.url }}" alt="icon-coaches">
+                                        </div>
 
-                                    <div class="car-text-wrap">
-                                        <h4>{{ coach.name }} {{ coach.last_name }}</h4>
-                                        <h5 class="orange-text">{{ coach.occupation }}</h5>
-                                        <p>{{ coach.achievements }}</p>
-                                    </div>
+                                        <div class="car-text-wrap">
+                                            <h4>{{ coach.name }} {{ coach.last_name }}</h4>
+                                            <h5 class="orange-text">{{ coach.occupation }}</h5>
+                                            <p>{{ coach.achievements }}</p>
+                                        </div>
 
-                                    <div class="car-btn-wrap">
-                                        <a href="{% url "teams-stats" %}" class="btn btn-link-o">
-                                            <span>know more</span>
-                                        </a>
-                                    </div>
+                                        <div class="car-btn-wrap">
+                                            <a href="{% url "teams-stats" %}" class="btn btn-link-o">
+                                                <span>know more</span>
+                                            </a>
+                                        </div>
 
-                                </div> <!--End carousel-item-coaches -->
+                                    </div> <!--End carousel-item-coaches -->
                                 {% endfor %}
 
                             </div> <!-- End carousel-wrap-coaches -->
@@ -613,20 +574,18 @@
                             <div id="gallery" class="gallery gallery-isotope clearfix">
                                 {% for gallery_photo in gallery_photos %}
                                     <div class="gallery__item category1">
-                                    <div class="gallery__item__img">
-                                        <img src="{{ gallery_photo.image.url }}" alt="gc">
-                                        <a class="hover-link-g mfp-gallery"
-                                           href="{{ gallery_photo.image.url }}">
-                                            <div class="inside">
-                                                <i class="icon-cross"></i>
-                                                <p>{{ gallery_photo.title }}</p>
-                                            </div>
-                                        </a>
+                                        <div class="gallery__item__img">
+                                            <img src="{{ gallery_photo.image.url }}" alt="gc">
+                                            <a class="hover-link-g mfp-gallery"
+                                               href="{{ gallery_photo.image.url }}">
+                                                <div class="inside">
+                                                    <i class="icon-cross"></i>
+                                                    <p>{{ gallery_photo.title }}</p>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                                 {% endfor %}
-
-
 
 
                             </div> <!-- End gallery-isotope -->
@@ -662,10 +621,10 @@
                             <div class="carousel-wrap-partners owl-carousel owl-theme">
                                 {% for partner in partners %}
                                     <div class="carousel-item-partners">
-                                    <a href="{% url "partners" %}" class="link-partners" target="_blank">
-                                        <img src="{{ partner.image.url }}" alt="partners">
-                                    </a>
-                                </div> <!--End carousel-item-partners -->
+                                        <a href="{% url "partners" %}" class="link-partners" target="_blank">
+                                            <img src="{{ partner.image.url }}" alt="partners">
+                                        </a>
+                                    </div> <!--End carousel-item-partners -->
                                 {% endfor %}
 
                             </div> <!-- End carousel-wrap-partners -->

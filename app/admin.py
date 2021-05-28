@@ -66,7 +66,7 @@ class AdminCoach(admin.ModelAdmin):
     list_per_page = 15
 
 
-@admin.register(MainSlides)
+@admin.register(MainSlide)
 class AdminMainSlides(admin.ModelAdmin):
     list_display = [
         "title",
@@ -78,11 +78,12 @@ class AdminMainSlides(admin.ModelAdmin):
     list_per_page = 15
 
 
-@admin.register(Partners)
+@admin.register(Partner)
 class AdminPartners(admin.ModelAdmin):
     list_display = [
         "name",
         "admin_image",
+        "history",
         "is_active",
     ]
 
