@@ -651,9 +651,26 @@ header {
 }
 
 .img-holder1 {
-    background-color: #204d74;
+    background-size: cover;
     background-position: center top;
-    z-index: initial;
+    height: 100vh;
+    width: 100%
+}
+
+.img-holder2 {
+    background: url(../../media/img/carousel/Carousel2.jpg);
+    background-size: cover;
+    background-position: center top;
+    height: 100vh;
+    width: 100%
+}
+
+.img-holder3 {
+    background: url(../../media/img/carousel/Carousel3.jpg);
+    background-size: cover;
+    background-position: center top;
+    height: 100vh;
+    width: 100%
 }
 
 .carousel-content {
