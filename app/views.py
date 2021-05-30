@@ -60,16 +60,16 @@ def blog_posts(request):
     for post in posts_list:
         post.content = cut(post.content, 300)
 
-    paginator = Paginator(posts_list, 3)
+    paginator = Paginator(posts_list, 1)
     page = request.GET.get('page')
     try:
-        posts = paginator.page(page)
+        posts = paginator.get_page(page)
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
-        posts = paginator.page(1)
+        posts = paginator.get_page(1)
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
-        posts = paginator.page(paginator.num_pages)
+        posts = paginator.get_page(paginator.num_pages)
 
     return render(request, "blog-posts.html", {
         "posts": posts,
