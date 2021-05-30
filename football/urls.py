@@ -10,10 +10,10 @@ urlpatterns = [
     path("about/", about, name="about"),
     path("teams-stats/", teams_and_stats, name="teams-stats"),
     path("gallery/", gallery, name="gallery"),
-    path("blog-posts/", news_and_blog, name="blog-posts"),
+    path("blog-posts/", blog_posts, name="blog-posts"),
     path("schedule/", schedule, name="schedule"),
     path("partners/", partners, name="partners"),
     path("contacts/", contacts, name="contacts"),
-    path("blog-posts/blog_post/", blog_post, name="blog-post"),
+    path("blog-posts/blog_post/<int:pk>/", blog_post, name="blog-post"),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

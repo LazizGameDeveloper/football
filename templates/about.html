@@ -39,7 +39,7 @@
 
                 <div class="carousel-wrap-about-players owl-carousel owl-theme">
                     {% for member in team_members %}
-                        <div class="carousel-item-about-players car-item-bg1">
+                        <div class="carousel-item-about-players car-item-bg1" style="background-image: url({{ member.image.url }})">
                             <div class="car-content">
                                 <h4>{{ member.rank }} </h4>
                                 <h2><span class="orange-text">{{ member.name }} {{ member.last_name }}</span></h2>

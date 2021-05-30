@@ -464,7 +464,7 @@
                                 {% for news in news_list %}
                                     <div class="carousel-item-news news-animated1">
 
-                                        <a href="{% url "blog-post" %}" class="link-news">
+                                        <a href="{% url "blog-post" news.pk%}" class="link-news">
                                             <div class="car-img-wrap">
                                                 <img src="{{ news.image.url }}" alt="{{ news.title }}">
                                             </div>
@@ -483,54 +483,6 @@
 
                                     </div> <!--End carousel-item-coaches -->
                                 {% endfor %}
-
-
-
-
-                                <div class="carousel-item-news news-animated2">
-
-                                    <a href="{% url "blog-post" %}" class="link-news">
-                                        <div class="car-img-wrap">
-                                            <img src="/media/img/news/news2.jpg" alt="icon-news">
-                                        </div>
-
-                                        <div class="car-date-wrap">
-                                            <div class="car-date-content">
-                                                <p>Feb 17 <br> 2017</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="car-text-wrap">
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, aut.
-                                            </p>
-                                        </div>
-                                    </a>
-
-                                </div> <!--End carousel-item-coaches -->
-
-                                <div class="carousel-item-news news-animated3">
-
-                                    <a href="{% url "blog-post" %}" class="link-news">
-                                        <div class="car-img-wrap">
-                                            <img src="/media/img/news/news3.jpg" alt="icon-news">
-                                        </div>
-
-                                        <div class="car-date-wrap">
-                                            <div class="car-date-content">
-                                                <p>Mar 9 <br> 2017</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="car-text-wrap">
-                                            <p>
-                                                Libero maxime eos iusto est perferendis dolorem, debitis, possimus saepe
-                                                natus.
-                                            </p>
-                                        </div>
-                                    </a>
-
-                                </div> <!--End carousel-item-coaches -->
 
                             </div> <!-- End carousel-wrap-News -->
                         </div> <!-- End col-md-12 -->
@@ -631,7 +583,7 @@
                         </div> <!-- End col-md-12 -->
 
                         <div class="col-md-12 padding-null">
-                            <div class="block-wrap-sponsor">
+                            <div class="block-wrap-sponsor" >
                                 <a href="{% url "contacts" %}">WANT TO SPONSOR US?</a>
                             </div>
                         </div>

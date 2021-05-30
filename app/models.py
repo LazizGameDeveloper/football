@@ -55,12 +55,34 @@ class Blog(models.Model):
         blank=True
     )
     content = models.TextField(verbose_name="Content")
-    date = models.DateTimeField(
+    date = models.DateField(
         verbose_name="Creation date",
         editable=False,
         auto_now_add=True
     )
+    author = models.CharField(verbose_name="Created by", max_length=20, default="")
     is_active = models.BooleanField(verbose_name="Is active", default=False)
+
+    def admin_image(self):
+
+        if self.image:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                f'<a href="{self.image.url}" target="_blank"><img src="{self.image.url}" width="200" /></a>'
+            )
+        else:
+            return 'Image does not exist'
+
+    admin_image.short_description = 'Photo'
+    admin_image.allow_tags = True
+
+    def admin_content(self):
+        short_description = self.content[:300]
+        # убираем последнее слово т.к. оно может мы разрезанным
+        return f"{short_description.rsplit(' ', 1)[0]}"
+
+    admin_content.short_description = "Desc"
+    admin_content.allow_tags = True
 
     class Meta:
         verbose_name = "blog"
@@ -236,7 +258,25 @@ class TeamMembers(models.Model):
     last_name = models.CharField(verbose_name="Last name", max_length=30, default="")
     rank = models.CharField(verbose_name="Rank", max_length=50, default="")
     biography = models.TextField(verbose_name="Biography", default="")
+    image = models.ImageField(
+        verbose_name="Photo",
+        upload_to="img/team members/",
+        default="",
+    )
     is_active = models.BooleanField(verbose_name="Is active", default=False)
+
+    def admin_image(self):
+
+        if self.image:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                f'<a href="{self.image.url}" target="_blank"><img src="{self.image.url}" width="200" /></a>'
+            )
+        else:
+            return 'Not Image Found'
+
+    admin_image.short_description = 'Photo'
+    admin_image.allow_tags = True
 
     def admin_biography(self):
         short_description = self.biography[:200]

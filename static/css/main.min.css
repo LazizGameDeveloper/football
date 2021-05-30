@@ -4821,7 +4821,7 @@ body input:required:valid, body textarea:required:valid {
 }
 
 .block-Partners .block-wrap-sponsor {
-    background-image: url(../../media/img/bg-img-sponsor.jpg);
+    background-image: url(/media/img/contract.jpg);
     background-size: cover center;
     background-repeat: no-repeat;
     margin: 127px 0 0 0;
@@ -4849,7 +4849,7 @@ body input:required:valid, body textarea:required:valid {
 .block-Subscribe .bg-subscribe1 {
     display: block;
     position: relative;
-    background-image: url(../../media/img/bg-img-subscribe1.jpg);
+    background-image: url(/media/img/contract2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     max-width: 100%
@@ -5245,7 +5245,6 @@ footer .content-wrap-footer .content-footer .copyright p {
 }
 
 .about-content-block .car-item-bg1 {
-    background-image: url(../../media/img/about/bg-img-about-carousel.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center

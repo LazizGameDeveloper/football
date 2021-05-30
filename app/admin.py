@@ -19,8 +19,9 @@ class Admin(admin.ModelAdmin):
 class AdminBlog(admin.ModelAdmin):
     list_display = [
         "title",
-        "image",
-        "content",
+        "admin_image",
+        "author",
+        "admin_content",
         "date",
         "is_active",
     ]
@@ -97,6 +98,7 @@ class AdminTeamMembers(admin.ModelAdmin):
         "last_name",
         "rank",
         "admin_biography",
+        "admin_image",
         "is_active",
     ]
 

@@ -653,6 +653,7 @@ header {
 .img-holder1 {
     background-color: #204d74;
     background-position: center top;
+    z-index: initial;
 }
 
 .carousel-content {

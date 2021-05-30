@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from app.models import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def main_page(request):
@@ -54,8 +55,25 @@ def gallery(request):
     })
 
 
-def news_and_blog(request):
-    return render(request, "blog-posts.html")
+def blog_posts(request):
+    posts_list = Blog.objects.filter(is_active=True)
+    for post in posts_list:
+        post.content = cut(post.content, 300)
+
+    paginator = Paginator(posts_list, 3)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        posts = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        posts = paginator.page(paginator.num_pages)
+
+    return render(request, "blog-posts.html", {
+        "posts": posts,
+    })
 
 
 def schedule(request):
@@ -76,8 +94,15 @@ def contacts(request):
     return render(request, "contacts.html")
 
 
-def blog_post(request):
-    return render(request, "blog-post.html")
+def blog_post(request, pk):
+    post = Blog.objects.get(pk=pk)
+
+    texts = post.content.splitlines()
+
+    return render(request, "blog-post.html", {
+        "post": post,
+        "texts": texts
+    })
 
 
 def cut(variable, length):

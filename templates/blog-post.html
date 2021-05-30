@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-
-{% include "blocks/head.html" %}
-
-<body class="Pages">
-<!-- preloader -->
-<div class="pl">
-    <div class="round1 anti"></div>
-    <div class="pl_r"></div>
-    <div class="pl_l"></div>
-</div>
-
-
-<div class="wrapper">
-
-    {% include "blocks/header.html" %}
-
+{% extends "app/inner/inner.html" %}
+{% block content %}
     <!-- Start Page-Content -->
     <section id="page-content">
 
@@ -38,52 +22,25 @@
                     <div class="col-md-9">
 
                         <div class="blog-post page-post-home">
-                            <div class="post-image"><a href="{% url "blog-post" %}"><img
-                                    src="/media/img/blog/post-img1.jpg" alt="post"></a></div>
+                            {% if post.image %}
+                                <div class="post-image"><a href="{% url "blog-post" post.pk %}"><img
+                                        src="{{ post.image.url }}" alt="post"></a></div>
+                            {% endif %}
+
 
                             <ul class="post-meta">
-                                <li class="post-date"><span>Jan 6 2017</span></li>
-                                <li class="post-author">by Paul Johnson</li>
-                                <li class="post-message"><i class="icon-interface"></i>3 Comments</li>
+                                <li class="post-date"><span>{{ post.date.year }} year</span></li>
+                                <li class="post-author">{{ post.author }}</li>
+
                             </ul>
 
-                            <h3 class="post-title"><a href="{% url "blog-post" %}">Biggest Plays of the Week</a></h3>
+                            <h3 class="post-title">{{ post.title }}</h3>
 
                             <div class="post-teaser">
-                                <p>In case you miss the links I send out on Twitter, Deadspin's sub-site Regressing is
-                                    running a series on the biggest plays of the week. I created a tool for them them
-                                    lists the biggest plays in terms of Win Probability Added (WPA).</p>
-                                <div class="inside">
-                                    <i class="icon-quotes"></i>
-                                    <p>The Gaylord Opryland Resort & Convention Center in Nashville, TN, hosts the 94th
-                                        annual AFCA showpiece event from January 8-11 and Global Football President
-                                        Patrick Steenberge will be available to meet coaches and visitors to the
-                                        Convention at Booth 304-306 in the exhibit hall.</p>
-                                    <p>Since 1996, only Global Football has consistently provided amateur football
-                                        players, coaches, families and fans the opportunity to travel and compete
-                                        internationally with people of differing cultures, producing games and tours in
-                                        25 countries on 6 continents. More than 350 teams and 15,000 curious travelers
-                                        have encountered a positive life-changing experience, while enjoying the
-                                        ultimate team-building opportunity.</p>
-                                </div>
-                                <p>The American Professional Football Association was formed, a little bit later
-                                    National Football League was established. The two organizations were competing for
-                                    players which drove up salaries.</p>
-                                <p>In 1966 they merged and agreed that each league champion would meet in a game called
-                                    the Super Bowl. In the ensuing years, football has become the most popular sport in
-                                    America - a billion-dollar business and a vital part of American Thanksgiving and
-                                    New Year celebrations. The Super Bowl is now unofficial holiday and a worldwide
-                                    phenomenon. Last week, the Denver Broncos sacked head coach, Mike Shanahan, after
-                                    the club failed to reach the play-offs following a poor run of form. Shanahan joined
-                                    the club as head coach in 1995 after being associated with them in one way or
-                                    another for many years and he experienced some success during his reign.</p>
-                                <p>The Broncos won the Super Bowl in 1998 and managed to defend their title the
-                                    following year. Although the club won half of their matches this season, several bad
-                                    results towards the latter stages left them unable to be a part of the play-offs.
-                                    During his time at the club, Shanahan won 146 matches and lost a total of 89.</p>
-                                <p>Shanahan’s sacking has come as a shock to many, especially since he was such an
-                                    experienced coach. Only Jeff Fisher, who became head coach of Tennessee in the early
-                                    1990s, had been serving as a coach for longer than Shanahan.</p>
+                                {% for text in texts %}
+                                    <p>{{ text }}</p>
+                                {% endfor %}
+
 
                             </div>
 
@@ -94,86 +51,12 @@
                             </ul>
 
                         </div> <!-- End Blog-post -->
-
-                        <div class="comments-block">
-                            <h3>Comments</h3>
-
-                            <div class="comment">
-                                <div class="userpic"><span class="icon-social"></span></div>
-                                <div class="text">
-                                    <div class="meta"><span>Paul Johnson  |  </span><span class="orange-text">Jan 6, 2017</span>
-                                    </div>
-                                    <p><i>The Broncos won the Super Bowl in 1998 and managed to defend their title the
-                                        following year. Although the club won half of their matches this season, several
-                                        bad results towards the latter stages left them unable to be a part of the
-                                        play-offs. During his time at the club, Shanahan won 146 matches and lost a
-                                        total of 89.</i></p>
-                                </div>
-                            </div>
-                            <div class="comment replay">
-                                <div class="userpic"><span class="icon-social"></span></div>
-                                <div class="text">
-                                    <div class="meta"><span>Paul Johnson  |  </span><span class="orange-text">Jan 6, 2017</span>
-                                    </div>
-                                    <p><i>The Broncos won the Super Bowl in 1998 and managed to defend their title the
-                                        following year. Although the club won half of their matches this season, several
-                                        bad results towards the latter stages left them unable to be a part of the
-                                        play-offs. During his time at the club, Shanahan won 146 matches and lost a
-                                        total of 89.</i></p>
-                                </div>
-                            </div>
-
-                        </div> <!-- End Comments-block -->
-
                         <div class="btns-page-posts-wrap list-btns-page">
                             <a href="#" class="btn btn-link-w active"><span>1</span></a>
                             <a href="#" class="btn btn-link-w"><span>2</span></a>
                             <a href="#" class="btn btn-link-w"><span>3</span></a>
                             <a href="#" class="btn btn-link-w"><span>..</span></a>
                         </div>
-
-                        <div class="form-comments">
-                            <h3>Leave Your Comment</h3>
-
-                            <form id="contactform" class="boxed-form" name="contactform" method="post"
-                                  novalidate="novalidate">
-                                <div id="success">
-                                    <p>Your comment was sent successfully!</p>
-                                </div>
-                                <div id="error">
-                                    <p>Something went wrong, try refreshing and submitting the form again.</p>
-                                </div>
-
-                                <!-- Hidden Required Fields -->
-                                <input type="hidden" name="project_name" value="Site Name">
-                                <input type="hidden" name="admin_email" value="Your email">
-                                <input type="hidden" name="form_subject" value="Form Subject">
-                                <!-- END Hidden Required Fields -->
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" value="" name="First name"
-                                           placeholder="First name">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" value="" name="Last name"
-                                           placeholder="Last name">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" value="" name="email" placeholder="Email">
-                                </div>
-
-                                <div class="form-group">
-                                    <textarea name="message" rows="10" placeholder="Comment"
-                                              class="form-control"></textarea>
-                                </div>
-
-                                <button class="btn btn-link-w" type="submit" id="submit"><span>leave a comment</span>
-                                </button>
-                            </form>
-                        </div>
-
                     </div> <!-- End Col -->
 
                     <div class="col-md-3">
@@ -278,39 +161,6 @@
 
                         </div> <!-- End Side-Block -->
 
-                        <div class="side-block pad-minus">
-                            <h3>Featured Posts</h3>
-
-                            <div class="blog-post post-preview">
-                                <div class="post-image"><a href="{% url "blog-post" %}"><img
-                                        src="/media/img/blog/post-img1.jpg" alt="post"></a></div>
-
-                                <ul class="post-meta">
-                                    <li class="post-date"><span>Jan 6 2017</span></li>
-                                </ul>
-
-                                <h3 class="post-title"><a href="{% url "blog-post" %}">Biggest Plays of the Week</a>
-                                </h3>
-                            </div> <!-- End Blog-post -->
-
-                        </div> <!-- End Side-Block -->
-
-                        <div class="side-block pad-minus">
-                            <h3>Featured Posts</h3>
-
-                            <div class="blog-post post-preview">
-                                <div class="post-image"><a href="{% url "blog-post" %}"><img
-                                        src="/media/img/blog/carousel-img-post2.jpg" alt="post"></a></div>
-
-                                <ul class="post-meta">
-                                    <li class="post-date"><span>Jan 6 2017</span></li>
-                                </ul>
-
-                                <h3 class="post-title"><a href="{% url "blog-post" %}">Fast fantasy facts on the running
-                                    backs of 2016</a></h3>
-                            </div> <!-- End Blog-post -->
-
-                        </div> <!-- End Side-Block -->
 
                     </div> <!-- End Col -->
 
@@ -319,14 +169,7 @@
         </div> <!-- End Posts Block-->
 
     </section> <!-- End Page-Content-->
+{% endblock %}
 
-    {% include "blocks/footer.html" %}
 
-</div> <!-- End Wrapper -->
 
-<div class="hidden"></div>
-
-{% include "blocks/js.html" %}
-
-</body>
-</html>
