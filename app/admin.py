@@ -115,3 +115,16 @@ class AdminCommittee(admin.ModelAdmin):
     ]
 
     list_per_page = 15
+
+
+@admin.register(Contact)
+class AdminContact(admin.ModelAdmin):
+    list_display = [
+        "first_name",
+        "last_name",
+        "email",
+        "short_message",
+        "send_data"
+    ]
+
+    list_per_page = 15

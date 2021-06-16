@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from app.models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from datetime import date
+from django.http import HttpResponseRedirect
 
 
 def main_page(request):
@@ -92,6 +94,19 @@ def partners(request):
 
 def contacts(request):
     return render(request, "contacts.html")
+
+
+def create_message(request):
+    if request.method == "POST":
+        message = Contact()
+        message.first_name = request.POST.get["first_name"]
+        message.last_name = request.POST.get["last_name"]
+        message.email = request.POST.get["email"]
+        message.message = request.POST.get["message"]
+        message.send_data = date.today()
+        message.save()
+
+    return HttpResponseRedirect("/")
 
 
 def blog_post(request, pk):

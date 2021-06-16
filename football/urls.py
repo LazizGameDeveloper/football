@@ -15,5 +15,6 @@ urlpatterns = [
     path("partners/", partners, name="partners"),
     path("contacts/", contacts, name="contacts"),
     path("blog-posts/blog_post/<int:pk>/", blog_post, name="blog-post"),
+    path("create/", create_message,),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

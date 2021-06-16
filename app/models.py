@@ -304,3 +304,26 @@ class Committee(models.Model):
         verbose_name_plural = "Committee"
 
         ordering = ["name", "last_name"]
+
+
+class Contact(models.Model):
+    first_name = models.CharField(verbose_name="First name", max_length=50, default="")
+    last_name = models.CharField(verbose_name="Last name", max_length=60, default="")
+    email = models.CharField(verbose_name="E-mail", max_length=100, default="")
+    message = models.TextField(verbose_name="Message", default="")
+    send_data = models.DateField(verbose_name="Data", auto_now_add=True, editable=False)
+
+    def short_message(self):
+        if len(self.message) > 200:
+            return self.message[200].rsplit(" ", 1)[0]
+        else:
+            return self.message
+    class Meta:
+
+        verbose_name = "contact"
+        verbose_name_plural = "contacts"
+
+        ordering = ["-send_data"]
+
+    def __str__(self):
+        return f"{self.last_name} {self.first_name}."
